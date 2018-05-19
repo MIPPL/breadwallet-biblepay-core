@@ -49,7 +49,7 @@ JNIEXPORT jlong JNICALL Java_com_nyxwallet_core_BRCoreChainParams_createJniTestn
 
 /*
  * Class:     com_breadwallet_core_BRCoreChainParams
- * Method:    createJniMainnetBiblepayChainParams
+ * Method:    createJniMainnetCoinChainParams
  * Signature: ()J
  */
 JNIEXPORT jlong JNICALL Java_com_nyxwallet_core_BRCoreChainParams_createJniMainnetCoinChainParams
@@ -57,7 +57,7 @@ JNIEXPORT jlong JNICALL Java_com_nyxwallet_core_BRCoreChainParams_createJniMainn
 
 /*
  * Class:     com_breadwallet_core_BRCoreChainParams
- * Method:    createJniTestnetBiblepayChainParams
+ * Method:    createJniTestnetCoinChainParams
  * Signature: ()J
  */
 JNIEXPORT jlong JNICALL Java_com_nyxwallet_core_BRCoreChainParams_createJniTestnetCoinChainParams
