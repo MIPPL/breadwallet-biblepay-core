@@ -51,7 +51,7 @@ struct BRWalletStruct {
 
 inline static uint64_t _txFee(uint64_t feePerKb, size_t size)
 {
-    uint64_t standardFee = ((size + 999)/1000)*TX_FEE_PER_KB, // standard fee based on tx size rounded up to nearest kb
+    uint64_t standardFee = (size*TX_FEE_PER_KB)/1000 // standard fee based on tx size rounded up to nearest kb
              fee = (((size*feePerKb/1000) + 99)/100)*100; // fee using feePerKb, rounded up to nearest 100 satoshi
     
     return (fee > standardFee) ? fee : standardFee;
@@ -576,9 +576,7 @@ BRTransaction *BRWalletCreateTxForOutputs(BRWallet *wallet, const BRTxOutput out
 
     for (i = 0; outputs && i < outCount; i++) {
         assert(outputs[i].script != NULL && outputs[i].scriptLen > 0);
-        const char *message = "<PACK><MT>MESSAGE</MT><MK>OUT_TX</MK><MV> </MV></PACK>";     // special for BBP wallet
-        
-        BRTransactionAddOutputBBP(transaction, outputs[i].amount, outputs[i].script, outputs[i].scriptLen, message, sizeof(message));
+        BRTransactionAddOutput(transaction, outputs[i].amount, outputs[i].script, outputs[i].scriptLen);
 
         amount += outputs[i].amount;
     }
@@ -650,9 +648,8 @@ BRTransaction *BRWalletCreateTxForOutputs(BRWallet *wallet, const BRTxOutput out
         BRWalletUnusedAddrs(wallet, &addr, 1, 1);
         uint8_t script[BRAddressScriptPubKey(NULL, 0, addr.s)];
         size_t scriptLen = BRAddressScriptPubKey(script, sizeof(script), addr.s);
-    
-        const char *message = "<change>1</change>";     // special for BBP wallet
-        BRTransactionAddOutputBBP(transaction, balance - (amount + feeAmount), script, scriptLen, message, sizeof(message) );
+
+        BRTransactionAddOutput(transaction, balance - (amount + feeAmount), script, scriptLen );
 
         BRTransactionShuffleOutputs(transaction);
     }

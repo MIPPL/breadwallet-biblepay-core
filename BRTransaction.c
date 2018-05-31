@@ -191,10 +191,7 @@ static size_t _BRTransactionOutputData(const BRTransaction *tx, uint8_t *data, s
         off += BRVarIntSet((data ? &data[off] : NULL), (off <= dataLen ? dataLen - off : 0), output->scriptLen);
         if (data && off + output->scriptLen <= dataLen) memcpy(&data[off], output->script, output->scriptLen);
         off += output->scriptLen;
-        // serialize BBP message
-        off += BRVarIntSet((data ? &data[off] : NULL), (off <= dataLen ? dataLen - off : 0), output->messageLen);
-        if (data && off + output->messageLen <= dataLen) memcpy(&data[off], output->message, output->messageLen);
-        off += output->messageLen;
+        
     }
     
     return (! data || off <= dataLen) ? off : 0;
@@ -373,7 +370,7 @@ BRTransaction *BRTransactionCopy(const BRTransaction *tx)
     }
     
     for (size_t i = 0; i < tx->outCount; i++) {
-        BRTransactionAddOutputBBP(cpy, tx->outputs[i].amount, tx->outputs[i].script, tx->outputs[i].scriptLen, tx->outputs[i].message, tx->outputs[i].messageLen);
+        BRTransactionAddOutput(cpy, tx->outputs[i].amount, tx->outputs[i].script, tx->outputs[i].scriptLen);
     }
 
     return cpy;
@@ -432,11 +429,7 @@ BRTransaction *BRTransactionParse(const uint8_t *buf, size_t bufLen)
         off += len;
         if (off + sLen <= bufLen) BRTxOutputSetScript(output, &buf[off], sLen);
         off += sLen;
-        // BBP message string
-        sLen = (size_t)BRVarInt(&buf[off], (off <= bufLen ? bufLen - off : 0), &len);
-        off += len;
-        if (off + sLen <= bufLen) BRTxOutputSetMessage(output, &buf[off], sLen);
-        off += sLen;
+        
     }
     
     tx->lockTime = (off + sizeof(uint32_t) <= bufLen) ? UInt32GetLE(&buf[off]) : 0;
@@ -482,13 +475,6 @@ void BRTransactionAddInput(BRTransaction *tx, UInt256 txHash, uint32_t index, ui
 // adds an output to tx
 void BRTransactionAddOutput(BRTransaction *tx, uint64_t amount, const uint8_t *script, size_t scriptLen )
 {
-    return BRTransactionAddOutputBBP(tx, amount, script,  scriptLen, NULL, 0 );
-}
-
-// adds an output to tx +message string (BBP protocol extension)
-void BRTransactionAddOutputBBP(BRTransaction *tx, uint64_t amount, const uint8_t *script, size_t scriptLen, const char *message, size_t messageLen )
-
-{
     BRTxOutput output = { "", amount, NULL, 0 };
     
     assert(tx != NULL);
@@ -496,7 +482,6 @@ void BRTransactionAddOutputBBP(BRTransaction *tx, uint64_t amount, const uint8_t
     
     if (tx) {
         BRTxOutputSetScript(&output, script, scriptLen);
-        BRTxOutputSetMessage(&output, message, messageLen);
         array_add(tx->outputs, output);
         tx->outCount = array_count(tx->outputs);
     }

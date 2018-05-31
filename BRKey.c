@@ -30,7 +30,7 @@
 #include <assert.h>
 #include <pthread.h>
 
-#define BITCOIN_PRIVKEY      182        // Coin
+#define BITCOIN_PRIVKEY      89        // Coin
 #define BITCOIN_PRIVKEY_TEST 239        // Coin = Bitcoin default
 
 #if __BIG_ENDIAN__ || (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) ||\
