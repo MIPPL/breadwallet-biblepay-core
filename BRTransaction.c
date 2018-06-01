@@ -165,20 +165,6 @@ void BRTxOutputSetScript(BRTxOutput *output, const uint8_t *script, size_t scrip
     }
 }
 
-void BRTxOutputSetMessage(BRTxOutput *output, const char *message, size_t messageLen)
-{
-    assert(output != NULL);
-    if (output->message) array_free(output->message);
-    output->message = NULL;
-    output->messageLen = 0;
-    
-    if (message) {
-        output->messageLen = messageLen;
-        array_new(output->message, messageLen);
-        array_add_array(output->message, message, messageLen);
-    }
-}
-
 static size_t _BRTransactionOutputData(const BRTransaction *tx, uint8_t *data, size_t dataLen, size_t index)
 {
     BRTxOutput *output;
