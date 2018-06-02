@@ -39,7 +39,7 @@ static const char *BRCoinDNSSeeds[] = {
 };
 
 static const char *BRCoinTestNetDNSSeeds[] = {
-    "node1.nyxcoin.org", "node2.nyxcoin.org", NULL
+    NULL
 };
 
 static const BRCheckPoint BRCoinTestNetCheckpoints[] = {
