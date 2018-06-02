@@ -34,7 +34,7 @@
 #define BBP_BLOCK_DIFFICULTY_INTERVAL (NPOW_TARGET_TIMESPAN/NPOW_TARGEY_SPACING)
 
 static const char *BRCoinDNSSeeds[] = {
-     "node1.nyxcoin.org", "node2.nyxcoin.org", "node3.nyxcoin.org","node4.nyxcoin.org","node5.nyxcoin.org"
+      "dnsseed.bifrostcoin.io", "149.28.174.219", "144.202.41.68", "explorer2.bifrostcoin.io"
     , NULL
 };
 
@@ -43,16 +43,21 @@ static const char *BRCoinTestNetDNSSeeds[] = {
 };
 
 static const BRCheckPoint BRCoinTestNetCheckpoints[] = {
-   {       0, uint256("00000d72d411dc83f7f09f88c7d57c77d3dc061eec14806a958c051902602636"), 1517054400, 0x1d00ffff }
+    {       0, uint256("0000040df09b15ba874400ba995f342b82573864b9ee10c255dc4448ce334438"), 1517054400, 0x1d00ffff }
 };
 
 // blockchain checkpoints - these are also used as starting points for partial chain downloads, so they must be at
 // difficulty transition boundaries in order to verify the block difficulty at the immediately following transition
 static const BRCheckPoint BRCoinCheckpoints[] = {
-    {      175, uint256("0000008324b22109a4cd33aa15181a81e13b0ed6b4724fd4b0b9355637a65058"), 1517077419, 0x1e008f13 },
-    {    5175, uint256("000000000002b5b8886acc2c0613f871e1eff192c68bde64fded61a337652065"), 1517722408, 0x1c022475 },
-    {   25175, uint256("000000000323b956e72290f25c3f3b0c29e4282b35902406a2a89e097efe94c8"), 1520279015, 0x1c03a0df },
-    {   55254, uint256("000000000067f916f4333284fca23ed3067efc875af63a0cc8342d8704b99248"), 1524117018, 0x1c081c0d }
+    {      0, uint256("000006e6fa091a20a38fe6f0212d03e5df72b44d76e2eb4246b4d366dbb01faf"), 1523854631, 0x1e0fffff },
+    {      1, uint256("0000066df97de78fdde0f1cd5e78cf7ff17e1a8d6cbf4137afa99f1587fe7d2e"), 1523873817, 0x1e0fffff },
+    {      2, uint256("00000b7cf8dc27bc4c98c91089adf58f5ec673e022c1b8ea0d5146d13bc49bb7"), 1523873820, 0x1e0fffff },
+    {     61, uint256("0000001e7aa6833af7660e4e58d739560af233922fa8f043b103af40d8043ee7"), 1523876041, 0x1e01e76a },
+    {    200, uint256("000001b018bb282b454914e42f9653b0e26fb8065562e50cbd9ce63283904b6a"), 1523885537, 0x1e02479a },
+    {   1000, uint256("6ba268b0a5a87360b5942084a03e44b10b99bc9942153843be8f30be9946d709"), 1523922742, 0x1c021634 },
+    {   5000, uint256("7b905329a6adabf53cba6a4c69fe4152a14a1154852f8459e7928f3566a99434"), 1524163348, 0x1b5a3fac },
+    {  10000, uint256("35f56a42078ed92afa103fa5d8fe0684e0d5f800350f5230e3bf5e56f83fcc08"), 1524466756, 0x1b5d6109 },
+    {  15000, uint256("278fa794765bcaf37b9b3f61c14584c2957b602cda5512f02a16dda8f702f751"), 1524769569, 0x1b51a826 }
 };
 
 static int BRCoinVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet)
@@ -68,8 +73,8 @@ static int BRCoinTestNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet
 
 static const BRChainParams BRCoinParams = {
     BRCoinDNSSeeds,
-    4330,                // standardPort
-    0xcc7b3caf,          // magicNumber
+    9229,                // standardPort
+    0xd6e1a2c5,          // magicNumber
     0, // services
     BRCoinVerifyDifficulty,
     BRCoinCheckpoints,
@@ -78,8 +83,8 @@ static const BRChainParams BRCoinParams = {
 
 static const BRChainParams BRCoinTestNetParams = {
     BRCoinTestNetDNSSeeds,
-    4332,               // standardPort
-    0x2cbd1f3b,          // magicNumber
+    19229,               // standardPort
+    0x86756453,          // magicNumber
     0, // services
     BRCoinTestNetVerifyDifficulty,
     BRCoinTestNetCheckpoints,

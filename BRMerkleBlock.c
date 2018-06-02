@@ -25,7 +25,7 @@
 #include "BRMerkleBlock.h"
 #include "BRCrypto.h"
 #include "BRAddress.h"
-#include "neoscrypt.h"
+#include "hash9.h"
 #include <stdlib.h>
 #include <inttypes.h>
 #include <limits.h>
@@ -137,7 +137,7 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen)
         }
         
 //        BRSHA256_2(&block->blockHash, buf, 80);
-        neoscrypt(buf, &block->blockHash, 0x0);       // hash function for block hash
+        hash9(buf, &block->blockHash, 80);       // hash function for block hash
     }
     
     return block;
