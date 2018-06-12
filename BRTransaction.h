@@ -75,8 +75,6 @@ typedef struct {
     uint64_t amount;
     uint8_t *script;
     size_t scriptLen;
-    char *message;
-    size_t messageLen;
 } BRTxOutput;
 
 #define BR_TX_OUTPUT_NONE ((BRTxOutput) { "", 0, NULL, 0 })
