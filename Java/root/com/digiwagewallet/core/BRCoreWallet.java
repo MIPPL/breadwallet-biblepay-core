@@ -169,6 +169,8 @@ public class BRCoreWallet extends BRCoreJniReference
      */
     public native boolean signTransaction (BRCoreTransaction transaction, int forkId, byte[] phrase);
 
+    public native BRCoreKey getKeyFromAddress (String address, int forkId, byte[] phrase);
+
     public native boolean containsTransaction (BRCoreTransaction transaction);
 
     public boolean registerTransaction (BRCoreTransaction transaction) {

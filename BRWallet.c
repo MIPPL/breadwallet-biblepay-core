@@ -697,6 +697,54 @@ int BRWalletSignTransaction(BRWallet *wallet, BRTransaction *tx, int forkId, con
     return r;
 }
 
+// signs any inputs in tx that can be signed using private keys from the wallet
+// forkId is 0 for bitcoin, 0x40 for b-cash
+// seed is the master private key (wallet seed) corresponding to the master public key given when the wallet was created
+// returns true if all inputs were signed, or false if there was an error or not all inputs were able to be signed
+BRKey BRWalletGetKeyFromAddress(BRWallet *wallet, const char *address, int forkId, const void *seed, size_t seedLen)
+{
+    uint32_t j, internalIdx[1], externalIdx[1];
+    size_t i, internalCount = 0, externalCount = 0;
+    BRKey r;
+
+    assert(wallet != NULL);
+    assert(address != NULL);
+
+    pthread_mutex_lock(&wallet->lock);
+
+    for (j = (uint32_t)array_count(wallet->internalChain); j > 0; j--) {
+        if (BRAddressEq(address, &wallet->internalChain[j - 1]))
+        {
+            internalIdx[internalCount++] = j - 1;
+            break;
+        }
+    }
+
+    for (j = (uint32_t)array_count(wallet->externalChain); j > 0; j--) {
+        if (BRAddressEq(address, &wallet->externalChain[j - 1]))
+        {
+            externalIdx[externalCount++] = j - 1;
+            break;
+        }
+    }
+
+    pthread_mutex_unlock(&wallet->lock);
+
+    BRKey keys[internalCount + externalCount];
+
+    if (seed) {
+        BRBIP32PrivKeyList(keys, internalCount, seed, seedLen, SEQUENCE_INTERNAL_CHAIN, internalIdx);
+        BRBIP32PrivKeyList(&keys[internalCount], externalCount, seed, seedLen, SEQUENCE_EXTERNAL_CHAIN, externalIdx);
+        // TODO: XXX wipe seed callback
+        seed = NULL;
+        r = keys[0];
+        //for (i = 0; i < internalCount + externalCount; i++) BRKeyClean(&keys[i]);
+    }
+
+    return r;
+}
+
+
 // true if the given transaction is associated with the wallet (even if it hasn't been registered)
 int BRWalletContainsTransaction(BRWallet *wallet, const BRTransaction *tx)
 {

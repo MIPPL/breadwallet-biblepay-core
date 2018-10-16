@@ -61,6 +61,8 @@ static jmethodID addressConstructor;
 static jclass transactionClass;
 static jmethodID transactionConstructor;
 
+static jclass keyClass;
+static jmethodID keyConstructor;
 
 /*
  * Class:     com_breadwallet_core_BRCoreWallet
@@ -422,6 +424,39 @@ Java_com_digiwagewallet_core_BRCoreWallet_signTransaction
 
 /*
  * Class:     com_breadwallet_core_BRCoreWallet
+ * Method:    getKeyForAddress
+ * Signature: (Lcom/digiwagewallet/core/BRCoreTransaction;I[B)Z
+ */
+JNIEXPORT jobject JNICALL
+Java_com_digiwagewallet_core_BRCoreWallet_getKeyFromAddress
+        (JNIEnv *env, jobject thisObject,
+         jstring addressObject,
+         jint forkId,
+         jbyteArray phraseByteArray) {
+    BRWallet *wallet = (BRWallet *) getJNIReference(env, thisObject);
+    const char *address = (*env)->GetStringUTFChars(env, addressObject, NULL);
+
+    // Convert phraseByteArray to a char* phrase
+    size_t phraseLen = (size_t) (*env)->GetArrayLength(env, phraseByteArray);
+    const jbyte *phraseBytes = (const jbyte *) (*env)->GetByteArrayElements(env, phraseByteArray, 0);
+
+    char phrase [1 + phraseLen];
+    memcpy (phrase, phraseBytes, phraseLen);
+    phrase[phraseLen] = '\0';
+
+    // Convert phrase to its BIP38 512 bit seed.
+    UInt512 seed;
+    BRBIP39DeriveKey (&seed, phrase, NULL);
+
+    // Find key for address
+    BRKey* key = (BRKey *) malloc (sizeof (BRKey));
+    *key = BRWalletGetKeyFromAddress(wallet, address, forkId, &seed, sizeof(seed));
+
+    return (*env)->NewObject (env, keyClass, keyConstructor, (jlong) key);
+}
+
+/*
+ * Class:     com_breadwallet_core_BRCoreWallet
  * Method:    containsTransaction
  * Signature: (Lcom/digiwagewallet/core/BRCoreTransaction;)Z
  */
@@ -680,6 +715,13 @@ JNIEXPORT void JNICALL Java_com_digiwagewallet_core_BRCoreWallet_initializeNativ
 
     transactionConstructor = (*env)->GetMethodID(env, transactionClass, "<init>", "(J)V");
     assert (NULL != transactionConstructor);
+
+    keyClass = (*env)->FindClass(env, "com/digiwagewallet/core/BRCoreKey");
+    assert (NULL != keyClass);
+    keyClass = (*env)->NewGlobalRef (env, keyClass);
+
+    keyConstructor = (*env)->GetMethodID(env, keyClass, "<init>", "(J)V");
+    assert (NULL != keyConstructor);
 }
 
 //

@@ -135,6 +135,9 @@ BRTransaction *BRWalletCreateTxForOutputs(BRWallet *wallet, const BRTxOutput out
 // returns true if all inputs were signed, or false if there was an error or not all inputs were able to be signed
 int BRWalletSignTransaction(BRWallet *wallet, BRTransaction *tx, int forkId, const void *seed, size_t seedLen);
 
+// For direct pubKey/privKey manipulation
+BRKey BRWalletGetKeyFromAddress(BRWallet *wallet, const char *address, int forkId, const void *seed, size_t seedLen);
+
 // true if the given transaction is associated with the wallet (even if it hasn't been registered)
 int BRWalletContainsTransaction(BRWallet *wallet, const BRTransaction *tx);
 

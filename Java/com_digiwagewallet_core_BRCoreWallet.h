@@ -153,6 +153,14 @@ JNIEXPORT jboolean JNICALL Java_com_digiwagewallet_core_BRCoreWallet_signTransac
 
 /*
  * Class:     com_breadwallet_core_BRCoreWallet
+ * Method:    getKeyFromAddress
+ * Signature: (Lcom/digiwagewallet/core/BRCoreTransaction;I[B)Z
+ */
+JNIEXPORT jobject JNICALL Java_com_digiwagewallet_core_BRCoreWallet_getKeyFromAddress
+        (JNIEnv *, jobject, jobject, jint, jbyteArray);
+
+/*
+ * Class:     com_breadwallet_core_BRCoreWallet
  * Method:    containsTransaction
  * Signature: (Lcom/digiwagewallet/core/BRCoreTransaction;)Z
  */

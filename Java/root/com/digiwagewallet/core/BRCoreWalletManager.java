@@ -24,6 +24,20 @@
  */
 package com.digiwagewallet.core;
 
+import android.security.keystore.UserNotAuthenticatedException;
+import android.util.Log;
+
+import android.content.Context;
+import com.digiwagewallet.tools.animation.BRDialog;
+import com.digiwagewallet.tools.manager.BRSharedPrefs;
+import com.digiwagewallet.tools.security.BRKeyStore;
+import com.digiwagewallet.tools.sqlite.CurrencyDataSource;
+import com.digiwagewallet.tools.util.BRConstants;
+import com.digiwagewallet.tools.util.Utils;
+import com.platform.entities.TxMetaData;
+import com.platform.tools.KVStoreManager;
+
+import java.util.Arrays;
 import java.util.concurrent.Executor;
 
 /**
@@ -162,6 +176,29 @@ public class BRCoreWalletManager implements
         getWallet().signTransaction(transaction, getForkId(), phrase);
         getPeerManager().publishTransaction(transaction);
         return transaction.getHash();
+    }
+
+    public BRCoreKey getKeyFromAddress ( Context app, String address ) {
+
+        BRCoreKey ret = new BRCoreKey();
+
+        BRCoreTransaction transaction = new BRCoreTransaction();
+
+        byte[] rawPhrase;
+        try {
+            rawPhrase = BRKeyStore.getPhrase(app, BRConstants.PAY_REQUEST_CODE);
+        } catch (UserNotAuthenticatedException e) {
+            return null;
+        }
+        if (rawPhrase.length < 10) return null;
+        try {
+            if (rawPhrase.length != 0) {
+                ret = getWallet().getKeyFromAddress(address, getForkId(), rawPhrase);
+            }
+        } finally {
+            Arrays.fill(rawPhrase, (byte) 0);
+        }
+        return ret;
     }
 
     protected int getForkId () {

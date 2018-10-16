@@ -96,7 +96,7 @@ JNIEXPORT jstring JNICALL Java_com_digiwagewallet_core_BRCoreTransactionInput_ge
 JNIEXPORT void JNICALL Java_com_digiwagewallet_core_BRCoreTransactionInput_setAddress
         (JNIEnv *env, jobject thisObject , jstring addressObject) {
     BRTxInput *input = (BRTxInput *) getJNIReference (env, thisObject);
-    
+
     size_t addressLen = sizeof (input->address);
 
     size_t addressDataLen = (size_t) (*env)->GetStringLength (env, addressObject);

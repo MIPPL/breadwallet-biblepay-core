@@ -63,7 +63,7 @@ Java_com_digiwagewallet_core_BRCoreKey_getPubKey
     BRKeyPubKey(key, NULL, 0);
 
     // ... now copy it.
-    size_t pubKeyLen = 65 * sizeof(uint8_t);
+    size_t pubKeyLen = ((key->compressed)?33:65) * sizeof(uint8_t);
     jbyteArray result = (*env)->NewByteArray(env, (jsize) pubKeyLen);
     (*env)->SetByteArrayRegion(env, result, 0, (jsize) pubKeyLen,
                                (const jbyte *) key->pubKey);
