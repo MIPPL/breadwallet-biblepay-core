@@ -34,7 +34,7 @@
 #define BBP_BLOCK_DIFFICULTY_INTERVAL (NPOW_TARGET_TIMESPAN/NPOW_TARGEY_SPACING)
 
 static const char *BRCoinDNSSeeds[] = {
-      "dnsseed.bifrostcoin.io", "149.28.174.219", "144.202.41.68", "explorer2.bifrostcoin.io"
+      "dnsseed.bifrostcoin.io", "149.28.174.219", "144.202.41.68", "explorer2.bifrostcoin.io"  //, "209.250.225.116","80.240.29.201"
     , NULL
 };
 
