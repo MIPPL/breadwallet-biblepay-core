@@ -27,262 +27,262 @@ target_sources (core
                 PUBLIC
 
                 # Support Files
-                src/main/cpp/core/support/BRAddress.c
-                src/main/cpp/core/support/BRAddress.h
-                src/main/cpp/core/support/BRAssert.c
-                src/main/cpp/core/support/BRAssert.h
-                src/main/cpp/core/support/BRArray.h
-                src/main/cpp/core/support/BRBIP32Sequence.c
-                src/main/cpp/core/support/BRBIP32Sequence.h
-                src/main/cpp/core/support/BRBIP39Mnemonic.c
-                src/main/cpp/core/support/BRBIP39Mnemonic.h
-                src/main/cpp/core/support/BRBIP39WordsEn.h
-                src/main/cpp/core/support/BRBase58.c
-                src/main/cpp/core/support/BRBase58.h
-                src/main/cpp/core/support/BRBech32.c
-                src/main/cpp/core/support/BRBech32.h
-                src/main/cpp/core/support/BRCrypto.c
-                src/main/cpp/core/support/BRCrypto.h
-                src/main/cpp/core/support/BRFileService.c
-                src/main/cpp/core/support/BRFileService.h
-                src/main/cpp/core/support/BRInt.h
-                src/main/cpp/core/support/BRKey.c
-                src/main/cpp/core/support/BRKey.h
-                src/main/cpp/core/support/BRKeyECIES.c
-                src/main/cpp/core/support/BRKeyECIES.h
-                src/main/cpp/core/support/BRSet.c
-                src/main/cpp/core/support/BRSet.h
+                ../../support/BRAddress.c
+                ../../support/BRAddress.h
+                ../../support/BRAssert.c
+                ../../support/BRAssert.h
+                ../../support/BRArray.h
+                ../../support/BRBIP32Sequence.c
+                ../../support/BRBIP32Sequence.h
+                ../../support/BRBIP39Mnemonic.c
+                ../../support/BRBIP39Mnemonic.h
+                ../../support/BRBIP39WordsEn.h
+                ../../support/BRBase58.c
+                ../../support/BRBase58.h
+                ../../support/BRBech32.c
+                ../../support/BRBech32.h
+                ../../support/BRCrypto.c
+                ../../support/BRCrypto.h
+                ../../support/BRFileService.c
+                ../../support/BRFileService.h
+                ../../support/BRInt.h
+                ../../support/BRKey.c
+                ../../support/BRKey.h
+                ../../support/BRKeyECIES.c
+                ../../support/BRKeyECIES.h
+                ../../support/BRSet.c
+                ../../support/BRSet.h
 
                 # Bitcoin
-                src/main/cpp/core/bitcoin/BRBIP38Key.c
-                src/main/cpp/core/bitcoin/BRBIP38Key.h
-                src/main/cpp/core/bitcoin/BRBloomFilter.c
-                src/main/cpp/core/bitcoin/BRBloomFilter.h
-                src/main/cpp/core/bitcoin/BRChainParams.h
-                src/main/cpp/core/bitcoin/BRChainParams.c
-                src/main/cpp/core/bitcoin/BRMerkleBlock.c
-                src/main/cpp/core/bitcoin/BRMerkleBlock.h
-                src/main/cpp/core/bitcoin/BRPaymentProtocol.c
-                src/main/cpp/core/bitcoin/BRPaymentProtocol.h
-                src/main/cpp/core/bitcoin/BRPeer.c
-                src/main/cpp/core/bitcoin/BRPeer.h
-                src/main/cpp/core/bitcoin/BRPeerManager.c
-                src/main/cpp/core/bitcoin/BRPeerManager.h
-                src/main/cpp/core/bitcoin/BRTransaction.c
-                src/main/cpp/core/bitcoin/BRTransaction.h
-                src/main/cpp/core/bitcoin/BRWallet.c
-                src/main/cpp/core/bitcoin/BRWallet.h
-                src/main/cpp/core/bitcoin/BRWalletManager.c
-                src/main/cpp/core/bitcoin/BRWalletManager.h
+                ../../bitcoin/BRBIP38Key.c
+                ../../bitcoin/BRBIP38Key.h
+                ../../bitcoin/BRBloomFilter.c
+                ../../bitcoin/BRBloomFilter.h
+                ../../bitcoin/BRChainParams.h
+                ../../bitcoin/BRChainParams.c
+                ../../bitcoin/BRMerkleBlock.c
+                ../../bitcoin/BRMerkleBlock.h
+                ../../bitcoin/BRPaymentProtocol.c
+                ../../bitcoin/BRPaymentProtocol.h
+                ../../bitcoin/BRPeer.c
+                ../../bitcoin/BRPeer.h
+                ../../bitcoin/BRPeerManager.c
+                ../../bitcoin/BRPeerManager.h
+                ../../bitcoin/BRTransaction.c
+                ../../bitcoin/BRTransaction.h
+                ../../bitcoin/BRWallet.c
+                ../../bitcoin/BRWallet.h
+                ../../bitcoin/BRWalletManager.c
+                ../../bitcoin/BRWalletManager.h
 
                 # BCash files
-                src/main/cpp/core/bcash/BRBCashAddr.c
-                src/main/cpp/core/bcash/BRBCashAddr.h
-                src/main/cpp/core/bcash/BRBCashParams.h
-                src/main/cpp/core/bcash/BRBCashParams.c
+                ../../bcash/BRBCashAddr.c
+                ../../bcash/BRBCashAddr.h
+                ../../bcash/BRBCashParams.h
+                ../../bcash/BRBCashParams.c
                 )
 
 # Core JNI
 target_sources (core
                 PUBLIC
-                src/main/cpp/jni/BRCoreJni.h
-                src/main/cpp/jni/BRCoreJni.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreJniReference.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreJniReference.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreAddress.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreAddress.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreChainParams.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreChainParams.h
-                src/main/cpp/jni/com_breadwallet_core_BRCorePeer.c
-                src/main/cpp/jni/com_breadwallet_core_BRCorePeer.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreMasterPubKey.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreMasterPubKey.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreKey.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreKey.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreMerkleBlock.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreMerkleBlock.h
-                src/main/cpp/jni/com_breadwallet_core_BRCorePeerManager.c
-                src/main/cpp/jni/com_breadwallet_core_BRCorePeerManager.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreTransaction.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreTransaction.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionInput.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionInput.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionOutput.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionOutput.h
-                src/main/cpp/jni/com_breadwallet_core_BRCorePaymentProtocol.c
-                src/main/cpp/jni/com_breadwallet_core_BRCorePaymentProtocol.h
-                src/main/cpp/jni/com_breadwallet_core_BRCoreWallet.c
-                src/main/cpp/jni/com_breadwallet_core_BRCoreWallet.h)
+                ../../Java/Core/src/main/cpp/jni/BRCoreJni.h
+                ../../Java/Core/src/main/cpp/jni/BRCoreJni.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreJniReference.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreJniReference.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreAddress.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreAddress.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreChainParams.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreChainParams.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeer.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeer.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMasterPubKey.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMasterPubKey.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreKey.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreKey.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMerkleBlock.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMerkleBlock.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeerManager.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeerManager.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransaction.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransaction.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionInput.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionInput.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionOutput.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionOutput.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePaymentProtocol.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePaymentProtocol.h
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreWallet.c
+                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreWallet.h)
 
 # Core Ethereum
 target_sources (core
                 PUBLIC
 
                 #
-                src/main/cpp/core/ethereum/BREthereum.h
+                ../../ethereum/BREthereum.h
 
                 # Util
-                src/main/cpp/core/ethereum/util/BRKeccak.c
-                src/main/cpp/core/ethereum/util/BRKeccak.h
-                src/main/cpp/core/ethereum/util/BRUtil.h
-                src/main/cpp/core/ethereum/util/BRUtilHex.c
-                src/main/cpp/core/ethereum/util/BRUtilHex.h
-                src/main/cpp/core/ethereum/util/BRUtilMath.c
-                src/main/cpp/core/ethereum/util/BRUtilMath.h
-                src/main/cpp/core/ethereum/util/BRUtilMathParse.c
-#                src/main/cpp/core/ethereum/util/testUtil.c
+                ../../ethereum/util/BRKeccak.c
+                ../../ethereum/util/BRKeccak.h
+                ../../ethereum/util/BRUtil.h
+                ../../ethereum/util/BRUtilHex.c
+                ../../ethereum/util/BRUtilHex.h
+                ../../ethereum/util/BRUtilMath.c
+                ../../ethereum/util/BRUtilMath.h
+                ../../ethereum/util/BRUtilMathParse.c
+#                ../../ethereum/util/testUtil.c
 
                 # RLP
-                src/main/cpp/core/ethereum/rlp/BRRlp.h
-                src/main/cpp/core/ethereum/rlp/BRRlpCoder.c
-                src/main/cpp/core/ethereum/rlp/BRRlpCoder.h
-#                src/main/cpp/core/ethereum/rlp/testRlp.c
+                ../../ethereum/rlp/BRRlp.h
+                ../../ethereum/rlp/BRRlpCoder.c
+                ../../ethereum/rlp/BRRlpCoder.h
+#                ../../ethereum/rlp/testRlp.c
 
                 # Event
-                src/main/cpp/core/ethereum/event/BREvent.c
-                src/main/cpp/core/ethereum/event/BREvent.h
-                src/main/cpp/core/ethereum/event/BREventAlarm.c
-                src/main/cpp/core/ethereum/event/BREventAlarm.h
-                src/main/cpp/core/ethereum/event/BREventQueue.c
-                src/main/cpp/core/ethereum/event/BREventQueue.h
-#                src/main/cpp/core/ethereum/event/testEvent.c
+                ../../ethereum/event/BREvent.c
+                ../../ethereum/event/BREvent.h
+                ../../ethereum/event/BREventAlarm.c
+                ../../ethereum/event/BREventAlarm.h
+                ../../ethereum/event/BREventQueue.c
+                ../../ethereum/event/BREventQueue.h
+#                ../../ethereum/event/testEvent.c
 
                 # Base
-                src/main/cpp/core/ethereum/base/BREthereumAddress.c
-                src/main/cpp/core/ethereum/base/BREthereumAddress.h
-                src/main/cpp/core/ethereum/base/BREthereumBase.h
-                src/main/cpp/core/ethereum/base/BREthereumEther.c
-                src/main/cpp/core/ethereum/base/BREthereumEther.h
-                src/main/cpp/core/ethereum/base/BREthereumGas.c
-                src/main/cpp/core/ethereum/base/BREthereumGas.h
-                src/main/cpp/core/ethereum/base/BREthereumHash.c
-                src/main/cpp/core/ethereum/base/BREthereumHash.h
-                src/main/cpp/core/ethereum/base/BREthereumData.c
-                src/main/cpp/core/ethereum/base/BREthereumData.h
-                src/main/cpp/core/ethereum/base/BREthereumLogic.h
-                src/main/cpp/core/ethereum/base/BREthereumSignature.c
-                src/main/cpp/core/ethereum/base/BREthereumSignature.h
-#                src/main/cpp/core/ethereum/base/testBase.c
+                ../../ethereum/base/BREthereumAddress.c
+                ../../ethereum/base/BREthereumAddress.h
+                ../../ethereum/base/BREthereumBase.h
+                ../../ethereum/base/BREthereumEther.c
+                ../../ethereum/base/BREthereumEther.h
+                ../../ethereum/base/BREthereumGas.c
+                ../../ethereum/base/BREthereumGas.h
+                ../../ethereum/base/BREthereumHash.c
+                ../../ethereum/base/BREthereumHash.h
+                ../../ethereum/base/BREthereumData.c
+                ../../ethereum/base/BREthereumData.h
+                ../../ethereum/base/BREthereumLogic.h
+                ../../ethereum/base/BREthereumSignature.c
+                ../../ethereum/base/BREthereumSignature.h
+#                ../../ethereum/base/testBase.c
 
                 # Block Chain
-                src/main/cpp/core/ethereum/blockchain/BREthereumAccountState.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumAccountState.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumBlock.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumBlock.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumBlockChain.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumBloomFilter.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumBloomFilter.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumLog.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumLog.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumNetwork.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumNetwork.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumTransaction.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumTransaction.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumTransactionReceipt.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumTransactionReceipt.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumTransactionStatus.c
-                src/main/cpp/core/ethereum/blockchain/BREthereumTransactionStatus.h
-                src/main/cpp/core/ethereum/blockchain/BREthereumProofOfWork.c
-#                src/main/cpp/core/ethereum/blockchain/testBc.c
+                ../../ethereum/blockchain/BREthereumAccountState.c
+                ../../ethereum/blockchain/BREthereumAccountState.h
+                ../../ethereum/blockchain/BREthereumBlock.c
+                ../../ethereum/blockchain/BREthereumBlock.h
+                ../../ethereum/blockchain/BREthereumBlockChain.h
+                ../../ethereum/blockchain/BREthereumBloomFilter.c
+                ../../ethereum/blockchain/BREthereumBloomFilter.h
+                ../../ethereum/blockchain/BREthereumLog.c
+                ../../ethereum/blockchain/BREthereumLog.h
+                ../../ethereum/blockchain/BREthereumNetwork.c
+                ../../ethereum/blockchain/BREthereumNetwork.h
+                ../../ethereum/blockchain/BREthereumTransaction.c
+                ../../ethereum/blockchain/BREthereumTransaction.h
+                ../../ethereum/blockchain/BREthereumTransactionReceipt.c
+                ../../ethereum/blockchain/BREthereumTransactionReceipt.h
+                ../../ethereum/blockchain/BREthereumTransactionStatus.c
+                ../../ethereum/blockchain/BREthereumTransactionStatus.h
+                ../../ethereum/blockchain/BREthereumProofOfWork.c
+#                ../../ethereum/blockchain/testBc.c
 
                 # Contract
-                src/main/cpp/core/ethereum/contract/BREthereumContract.c
-                src/main/cpp/core/ethereum/contract/BREthereumContract.h
-                src/main/cpp/core/ethereum/contract/BREthereumToken.c
-                src/main/cpp/core/ethereum/contract/BREthereumToken.h
-#                src/main/cpp/core/ethereum/contract/testContract.c
+                ../../ethereum/contract/BREthereumContract.c
+                ../../ethereum/contract/BREthereumContract.h
+                ../../ethereum/contract/BREthereumToken.c
+                ../../ethereum/contract/BREthereumToken.h
+#                ../../ethereum/contract/testContract.c
 
                 # MPT
-                src/main/cpp/core/ethereum/mpt/BREthereumMPT.c
-                src/main/cpp/core/ethereum/mpt/BREthereumMPT.h
+                ../../ethereum/mpt/BREthereumMPT.c
+                ../../ethereum/mpt/BREthereumMPT.h
 
                 # LES Msg
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageDIS.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageDIS.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageETH.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageLES.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageLES.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageP2P.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageP2P.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessagePIP.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessagePIP.h
+                ../../ethereum/les/msg/BREthereumMessageDIS.c
+                ../../ethereum/les/msg/BREthereumMessageDIS.h
+                ../../ethereum/les/msg/BREthereumMessageETH.h
+                ../../ethereum/les/msg/BREthereumMessageLES.c
+                ../../ethereum/les/msg/BREthereumMessageLES.h
+                ../../ethereum/les/msg/BREthereumMessageP2P.c
+                ../../ethereum/les/msg/BREthereumMessageP2P.h
+                ../../ethereum/les/msg/BREthereumMessagePIP.c
+                ../../ethereum/les/msg/BREthereumMessagePIP.h
 
                 # LES
-                src/main/cpp/core/ethereum/les/BREthereumLES.c
-                src/main/cpp/core/ethereum/les/BREthereumLES.h
-                src/main/cpp/core/ethereum/les/BREthereumLESBase.h
-                src/main/cpp/core/ethereum/les/BREthereumLESFrameCoder.c
-                src/main/cpp/core/ethereum/les/BREthereumLESFrameCoder.h
-                src/main/cpp/core/ethereum/les/BREthereumLESRandom.c
-                src/main/cpp/core/ethereum/les/BREthereumLESRandom.h
-                src/main/cpp/core/ethereum/les/BREthereumMessage.c
-                src/main/cpp/core/ethereum/les/BREthereumMessage.h
-                src/main/cpp/core/ethereum/les/BREthereumNode.c
-                src/main/cpp/core/ethereum/les/BREthereumNode.h
-                src/main/cpp/core/ethereum/les/BREthereumNodeEndpoint.c
-                src/main/cpp/core/ethereum/les/BREthereumNodeEndpoint.h
-                src/main/cpp/core/ethereum/les/BREthereumProvision.c
-                src/main/cpp/core/ethereum/les/BREthereumProvision.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageP2P.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageP2P.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageDIS.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageDIS.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageETH.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageLES.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessageLES.c
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessagePIP.h
-                src/main/cpp/core/ethereum/les/msg/BREthereumMessagePIP.c
-#                src/main/cpp/core/ethereum/les/test-les.c
-#                src/main/cpp/core/ethereum/les/test-les.h
+                ../../ethereum/les/BREthereumLES.c
+                ../../ethereum/les/BREthereumLES.h
+                ../../ethereum/les/BREthereumLESBase.h
+                ../../ethereum/les/BREthereumLESFrameCoder.c
+                ../../ethereum/les/BREthereumLESFrameCoder.h
+                ../../ethereum/les/BREthereumLESRandom.c
+                ../../ethereum/les/BREthereumLESRandom.h
+                ../../ethereum/les/BREthereumMessage.c
+                ../../ethereum/les/BREthereumMessage.h
+                ../../ethereum/les/BREthereumNode.c
+                ../../ethereum/les/BREthereumNode.h
+                ../../ethereum/les/BREthereumNodeEndpoint.c
+                ../../ethereum/les/BREthereumNodeEndpoint.h
+                ../../ethereum/les/BREthereumProvision.c
+                ../../ethereum/les/BREthereumProvision.h
+                ../../ethereum/les/msg/BREthereumMessageP2P.h
+                ../../ethereum/les/msg/BREthereumMessageP2P.c
+                ../../ethereum/les/msg/BREthereumMessageDIS.h
+                ../../ethereum/les/msg/BREthereumMessageDIS.c
+                ../../ethereum/les/msg/BREthereumMessageETH.h
+                ../../ethereum/les/msg/BREthereumMessageLES.h
+                ../../ethereum/les/msg/BREthereumMessageLES.c
+                ../../ethereum/les/msg/BREthereumMessagePIP.h
+                ../../ethereum/les/msg/BREthereumMessagePIP.c
+#                ../../ethereum/les/test-les.c
+#                ../../ethereum/les/test-les.h
 
                 # BCS
-                src/main/cpp/core/ethereum/bcs/BREthereumBCS.c
-                src/main/cpp/core/ethereum/bcs/BREthereumBCS.h
-                src/main/cpp/core/ethereum/bcs/BREthereumBCSEvent.c
-                src/main/cpp/core/ethereum/bcs/BREthereumBCSPrivate.h
-                src/main/cpp/core/ethereum/bcs/BREthereumBCSSync.c
-                src/main/cpp/core/ethereum/bcs/BREthereumBlockChainSlice.h
+                ../../ethereum/bcs/BREthereumBCS.c
+                ../../ethereum/bcs/BREthereumBCS.h
+                ../../ethereum/bcs/BREthereumBCSEvent.c
+                ../../ethereum/bcs/BREthereumBCSPrivate.h
+                ../../ethereum/bcs/BREthereumBCSSync.c
+                ../../ethereum/bcs/BREthereumBlockChainSlice.h
 
                 #EWM
-                src/main/cpp/core/ethereum/ewm/BREthereumBase.h
-                src/main/cpp/core/ethereum/ewm/BREthereumAccount.c
-                src/main/cpp/core/ethereum/ewm/BREthereumAccount.h
-                src/main/cpp/core/ethereum/ewm/BREthereumAmount.c
-                src/main/cpp/core/ethereum/ewm/BREthereumAmount.h
-                src/main/cpp/core/ethereum/ewm/BREthereumTransfer.c
-                src/main/cpp/core/ethereum/ewm/BREthereumTransfer.h
-                src/main/cpp/core/ethereum/ewm/BREthereumWallet.c
-                src/main/cpp/core/ethereum/ewm/BREthereumWallet.h
-                src/main/cpp/core/ethereum/ewm/BREthereumClient.h
-                src/main/cpp/core/ethereum/ewm/BREthereumEWM.c
-                src/main/cpp/core/ethereum/ewm/BREthereumEWM.h
-                src/main/cpp/core/ethereum/ewm/BREthereumEWMClient.c
-                src/main/cpp/core/ethereum/ewm/BREthereumEWMEvent.c
-                src/main/cpp/core/ethereum/ewm/BREthereumEWMPrivate.h
-#                src/main/cpp/core/ethereum/ewm/testEwm.c
+                ../../ethereum/ewm/BREthereumBase.h
+                ../../ethereum/ewm/BREthereumAccount.c
+                ../../ethereum/ewm/BREthereumAccount.h
+                ../../ethereum/ewm/BREthereumAmount.c
+                ../../ethereum/ewm/BREthereumAmount.h
+                ../../ethereum/ewm/BREthereumTransfer.c
+                ../../ethereum/ewm/BREthereumTransfer.h
+                ../../ethereum/ewm/BREthereumWallet.c
+                ../../ethereum/ewm/BREthereumWallet.h
+                ../../ethereum/ewm/BREthereumClient.h
+                ../../ethereum/ewm/BREthereumEWM.c
+                ../../ethereum/ewm/BREthereumEWM.h
+                ../../ethereum/ewm/BREthereumEWMClient.c
+                ../../ethereum/ewm/BREthereumEWMEvent.c
+                ../../ethereum/ewm/BREthereumEWMPrivate.h
+#                ../../ethereum/ewm/testEwm.c
                 )
 
 # Core Ethereum JNI
 target_sources (core
                 PUBLIC
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumAccount.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumAmount.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumBlock.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.c
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.c
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumToken.c
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumToken.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumTransaction.h
-                src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumWallet.h)
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumAccount.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumAmount.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumBlock.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.c
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.c
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumToken.c
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumToken.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumTransaction.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumWallet.h)
 
-include_directories(src/main/cpp/core/)
-include_directories(src/main/cpp/core/support)
-include_directories(src/main/cpp/core/bitcoin)
-include_directories(src/main/cpp/core/bcash)
-include_directories(src/main/cpp/core/ethereum/)
-include_directories(src/main/cpp/core/secp256k1/)
+include_directories(../../)
+include_directories(../../support)
+include_directories(../../bitcoin)
+include_directories(../../bcash)
+include_directories(../../ethereum/)
+include_directories(../../secp256k1/)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
