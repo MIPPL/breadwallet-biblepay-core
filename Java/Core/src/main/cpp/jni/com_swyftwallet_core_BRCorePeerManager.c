@@ -442,14 +442,14 @@ Java_com_swyftwallet_core_BRCorePeerManager_disposeNative
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCorePeerManager_initializeNative
         (JNIEnv *env, jclass thisClass) {
-    blockClass = (*env)->FindClass(env, "com_swyftwallet_/core/BRCoreMerkleBlock");
+    blockClass = (*env)->FindClass(env, "com/swyftwallet/core/BRCoreMerkleBlock");
     assert (NULL != blockClass);
     blockClass = (*env)->NewGlobalRef (env, blockClass);
 
     blockConstructor = (*env)->GetMethodID(env, blockClass, "<init>", "(J)V");
     assert (NULL != blockConstructor);
 
-    peerClass = (*env)->FindClass(env, "com_swyftwallet_/core/BRCorePeer");
+    peerClass = (*env)->FindClass(env, "com/swyftwallet/core/BRCorePeer");
     assert (NULL != peerClass);
     peerClass = (*env)->NewGlobalRef (env, peerClass);
 

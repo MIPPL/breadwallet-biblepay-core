@@ -33,7 +33,7 @@ JNI_OBJS=$(JNI_SRCS:.c=.o)
 # JNI Header Files that we are interest in keeping (because they are not empty)
 JNI_HDRS=$(JNI_SRCS:.c=.h)
 
-JAVA_SDIR=Core/src/main/java/com_swyftwallet_/core
+JAVA_SDIR=Core/src/main/java/com/swyftwallet/core
 
 JAVA_SRCS=$(JAVA_SDIR)/BRCoreAddress.java \
 	$(JAVA_SDIR)/BRCoreChainParams.java \
@@ -65,7 +65,7 @@ JAVA_SRCS=$(JAVA_SDIR)/BRCoreAddress.java \
 
 JAVA_OBJS=$(JAVA_SRCS:.java=.class)
 
-JAVA_TST_SRCS=Core/src/test/java/com_swyftwallet_/core/BRWalletManager.java
+JAVA_TST_SRCS=Core/src/test/java/com/swyftwallet/core/BRWalletManager.java
 JAVA_TST_OBJS=$(JAVA_TST_SRCS:.java=.class)
 
 #
@@ -181,7 +181,7 @@ java_comp:	FORCE
 
 jni_hdr_core: 	FORCE
 	@echo Core JNI Headers
-	@(cd build/com_swyftwallet_/core; \
+	@(cd build/com/swyftwallet/core; \
 	  for class in BRCore*.class; do \
 	      javah -jni -d $(DIR)/$(JNI_SDIR) -classpath $(DIR)/build swyftwallet.core.$${class%%.class}; \
 	  done)
@@ -190,7 +190,7 @@ jni_hdr_core: 	FORCE
 
 jni_hdr_eth: 	FORCE
 	@echo Ethereum JNI Headers
-	@(cd build/com_swyftwallet_/core/ethereum; \
+	@(cd build/com/swyftwallet/core/ethereum; \
 	  for class in BREthereum*.class; do \
 	      javah -jni -d $(DIR)/$(JNI_SDIR)/ethereum -classpath $(DIR)/build swyftwallet.core.ethereum.$${class%%.class}; \
 	  done)
@@ -219,7 +219,7 @@ FORCE:
 # 	java -Djava.library.path=/Users/ebg Foo
 #
 
-# (cd ${APP}/app/build/intermediates/classes/debug/com_swyftwallet_/core; for class in BRCore*.class; do \
+# (cd ${APP}/app/build/intermediates/classes/debug/com/swyftwallet/core; for class in BRCore*.class; do \
 #     javah -jni -d ${APP}/app/src/main/cpp/breadwallet-core/Java/ \
 #	-classpath ${APP}/app/build/intermediates/classes/debug/ \
 #	swyftwallet.core.${class%%.class}; \

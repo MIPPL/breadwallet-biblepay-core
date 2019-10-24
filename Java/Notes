@@ -89,7 +89,7 @@ PROJECT_DIR=<....>/app
 JNI_DIR=${PROJECT_DIR}/src/main/cpp/breadwallet-core/Java/
 CLASSPATH=${PROJECT_DIR}/build/intermediates/classes/debug/
 
-(cd ~/Bread/CoreJNI/app/build/intermediates/classes/debug/com_swyftwallet_/core; \
+(cd ~/Bread/CoreJNI/app/build/intermediates/classes/debug/com/swyftwallet/core; \
  for class in BRCore*.class; \
    do javah -jni -d ${JNI_DIR} -classpath ${CLASSPATH} swyftwallet.core.${class%%.class}; \
    done)

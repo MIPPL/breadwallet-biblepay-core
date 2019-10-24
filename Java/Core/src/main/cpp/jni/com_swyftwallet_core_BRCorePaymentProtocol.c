@@ -24,7 +24,7 @@ jmethodID transactionOutputConstructor;
 
 static void commonStaticInitialize(JNIEnv *env) {
     //
-    transactionClass = (*env)->FindClass(env, "com_swyftwallet_/core/BRCoreTransaction");
+    transactionClass = (*env)->FindClass(env, "com/swyftwallet/core/BRCoreTransaction");
     assert (NULL != transactionClass);
     transactionClass = (*env)->NewGlobalRef(env, transactionClass);
 
@@ -32,7 +32,7 @@ static void commonStaticInitialize(JNIEnv *env) {
     assert (NULL != transactionConstructor);
 
     //
-    transactionInputClass = (*env)->FindClass(env, "com_swyftwallet_/core/BRCoreTransactionInput");
+    transactionInputClass = (*env)->FindClass(env, "com/swyftwallet/core/BRCoreTransactionInput");
     assert (NULL != transactionInputClass);
     transactionInputClass = (*env)->NewGlobalRef(env, transactionInputClass);
 
@@ -40,7 +40,7 @@ static void commonStaticInitialize(JNIEnv *env) {
     assert (NULL != transactionInputConstructor);
 
     //
-    transactionOutputClass = (*env)->FindClass(env, "com_swyftwallet_/core/BRCoreTransactionOutput");
+    transactionOutputClass = (*env)->FindClass(env, "com/swyftwallet/core/BRCoreTransactionOutput");
     assert(NULL != transactionOutputClass);
     transactionOutputClass = (*env)->NewGlobalRef(env, transactionOutputClass);
 

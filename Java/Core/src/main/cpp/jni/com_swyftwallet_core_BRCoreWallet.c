@@ -666,14 +666,14 @@ Java_com_swyftwallet_core_BRCoreWallet_disposeNative
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreWallet_initializeNative
         (JNIEnv *env, jclass thisClass) {
-    addressClass = (*env)->FindClass(env, "com_swyftwallet_/core/BRCoreAddress");
+    addressClass = (*env)->FindClass(env, "com/swyftwallet/core/BRCoreAddress");
     assert (NULL != addressClass);
     addressClass = (*env)->NewGlobalRef (env, addressClass);
 
     addressConstructor = (*env)->GetMethodID(env, addressClass, "<init>", "(J)V");
     assert (NULL != addressConstructor);
 
-    transactionClass = (*env)->FindClass (env, "com_swyftwallet_/core/BRCoreTransaction");
+    transactionClass = (*env)->FindClass (env, "com/swyftwallet/core/BRCoreTransaction");
     assert (NULL != transactionClass);
     transactionClass = (*env)->NewGlobalRef (env, transactionClass);
 
