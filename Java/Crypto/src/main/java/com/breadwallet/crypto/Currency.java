@@ -7,7 +7,7 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.crypto;
+package com.swyftwallet.crypto;
 
 public class Currency {
     public final String code;

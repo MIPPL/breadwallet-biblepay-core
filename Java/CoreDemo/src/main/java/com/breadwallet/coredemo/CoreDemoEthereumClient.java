@@ -7,14 +7,14 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.coredemo;
+package com.swyftwallet.coredemo;
 
-import com.breadwallet.core.ethereum.BREthereumBlock;
-import com.breadwallet.core.ethereum.BREthereumEWM;
-import com.breadwallet.core.ethereum.BREthereumNetwork;
-import com.breadwallet.core.ethereum.BREthereumToken;
-import com.breadwallet.core.ethereum.BREthereumTransfer;
-import com.breadwallet.core.ethereum.BREthereumWallet;
+import com.swyftwallet.core.ethereum.BREthereumBlock;
+import com.swyftwallet.core.ethereum.BREthereumEWM;
+import com.swyftwallet.core.ethereum.BREthereumNetwork;
+import com.swyftwallet.core.ethereum.BREthereumToken;
+import com.swyftwallet.core.ethereum.BREthereumTransfer;
+import com.swyftwallet.core.ethereum.BREthereumWallet;
 
 import java.util.ArrayList;
 import java.util.HashMap;

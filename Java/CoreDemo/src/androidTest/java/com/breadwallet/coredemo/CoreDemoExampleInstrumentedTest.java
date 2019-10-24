@@ -7,7 +7,7 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.coredemo;
+package com.swyftwallet.coredemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -30,7 +30,7 @@ public class CoreDemoExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.breadwallet.coredemo", appContext.getPackageName());
+        assertEquals("com.swyftwallet.coredemo", appContext.getPackageName());
         assertTrue(false);
     }
 }

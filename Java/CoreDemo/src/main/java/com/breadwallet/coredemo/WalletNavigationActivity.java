@@ -7,12 +7,12 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.coredemo;
+package com.swyftwallet.coredemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.breadwallet.core.ethereum.BREthereumNetwork;
+import com.swyftwallet.core.ethereum.BREthereumNetwork;
 
 import java.io.File;
 

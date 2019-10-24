@@ -7,11 +7,11 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.crypto.ethereum;
+package com.swyftwallet.crypto.ethereum;
 
-import com.breadwallet.crypto.Currency;
-import com.breadwallet.crypto.Network;
-import com.breadwallet.crypto.Unit;
+import com.swyftwallet.crypto.Currency;
+import com.swyftwallet.crypto.Network;
+import com.swyftwallet.crypto.Unit;
 
 public interface Ethereum {
     Currency currency = new Currency ("ETH", "Ξ", "Ethereum", 18, "WEI", "wei");

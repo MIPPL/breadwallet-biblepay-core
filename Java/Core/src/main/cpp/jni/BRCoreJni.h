@@ -9,7 +9,7 @@
 
 #include <jni.h>
 #include "bitcoin/BRTransaction.h"
-#include "com_breadwallet_core_BRCoreJniReference.h"
+#include "com_swyftwallet_core_BRCoreJniReference.h"
 
 /**
  *

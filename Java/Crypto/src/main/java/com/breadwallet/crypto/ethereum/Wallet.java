@@ -7,13 +7,13 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.crypto.ethereum;
+package com.swyftwallet.crypto.ethereum;
 
-import com.breadwallet.crypto.Amount;
-import com.breadwallet.crypto.Currency;
-import com.breadwallet.crypto.WalletManager;
+import com.swyftwallet.crypto.Amount;
+import com.swyftwallet.crypto.Currency;
+import com.swyftwallet.crypto.WalletManager;
 
-public class Wallet extends com.breadwallet.crypto.Wallet {
+public class Wallet extends com.swyftwallet.crypto.Wallet {
     long core;
 
     /// Balance

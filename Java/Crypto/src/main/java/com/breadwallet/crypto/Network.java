@@ -7,8 +7,7 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.crypto;
-import com.breadwallet.crypto.ethereum.Ethereum;
+package com.swyftwallet.crypto;
 
 public class Network {
     enum Type { Bitcoin, Bitcash, Ethereum }
@@ -65,6 +64,6 @@ public class Network {
 
     public Network (Ethereum ethereum) {
         this (Type.Ethereum, null, null, ethereum,
-                com.breadwallet.crypto.ethereum.Ethereum.currency);
+                com.swyftwallet.crypto.ethereum.Ethereum.currency);
     }
 }

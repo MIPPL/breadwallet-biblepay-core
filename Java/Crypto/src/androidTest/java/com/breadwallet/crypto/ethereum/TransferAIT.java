@@ -7,9 +7,9 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.crypto.ethereum;
+package com.swyftwallet.crypto.ethereum;
 
-import com.breadwallet.crypto.BaseAIT;
+import com.swyftwallet.crypto.BaseAIT;
 
 import org.junit.Test;
 

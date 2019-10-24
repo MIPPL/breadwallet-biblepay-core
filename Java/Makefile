@@ -10,30 +10,30 @@ JNI_LIB=libCore.jnilib
 JNI_SDIR=Core/src/main/cpp/jni
 
 JNI_SRCS=$(JNI_SDIR)/BRCoreJni.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreAddress.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreChainParams.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreJniReference.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreKey.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreMasterPubKey.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreMerkleBlock.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCorePaymentProtocol.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCorePeer.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCorePeerManager.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreTransaction.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreTransactionInput.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreTransactionOutput.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreWallet.c \
-	$(JNI_SDIR)/com_breadwallet_core_BRCoreWallet.c \
-	$(JNI_SDIR)/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.c \
-	$(JNI_SDIR)/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.c \
-	$(JNI_SDIR)/ethereum/com_breadwallet_core_ethereum_BREthereumToken.c
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreAddress.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreChainParams.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreJniReference.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreKey.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreMasterPubKey.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreMerkleBlock.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCorePaymentProtocol.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCorePeer.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCorePeerManager.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreTransaction.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreTransactionInput.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreTransactionOutput.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreWallet.c \
+	$(JNI_SDIR)/com_swyftwallet_core_BRCoreWallet.c \
+	$(JNI_SDIR)/ethereum/com_swyftwallet_core_ethereum_BREthereumEWM.c \
+	$(JNI_SDIR)/ethereum/com_swyftwallet_core_ethereum_BREthereumNetwork.c \
+	$(JNI_SDIR)/ethereum/com_swyftwallet_core_ethereum_BREthereumToken.c
 
 JNI_OBJS=$(JNI_SRCS:.c=.o)
 
 # JNI Header Files that we are interest in keeping (because they are not empty)
 JNI_HDRS=$(JNI_SRCS:.c=.h)
 
-JAVA_SDIR=Core/src/main/java/com/breadwallet/core
+JAVA_SDIR=Core/src/main/java/com_swyftwallet_/core
 
 JAVA_SRCS=$(JAVA_SDIR)/BRCoreAddress.java \
 	$(JAVA_SDIR)/BRCoreChainParams.java \
@@ -65,7 +65,7 @@ JAVA_SRCS=$(JAVA_SDIR)/BRCoreAddress.java \
 
 JAVA_OBJS=$(JAVA_SRCS:.java=.class)
 
-JAVA_TST_SRCS=Core/src/test/java/com/breadwallet/core/BRWalletManager.java
+JAVA_TST_SRCS=Core/src/test/java/com_swyftwallet_/core/BRWalletManager.java
 JAVA_TST_OBJS=$(JAVA_TST_SRCS:.java=.class)
 
 #
@@ -164,12 +164,12 @@ compile: $(JNI_LIB) java_comp
 
 test: $(JNI_LIB) java_comp
 	java -Xss1m -Dwallet.test -classpath build -Djava.library.path=. \
-		 com.breadwallet.core.BRWalletManager $(ARGS) # -D.
+		 swyftwallet.core.BRWalletManager $(ARGS) # -D.
 
 debug: $(JNI_LIB) java_comp
 	java -Xss1m -Xdebug -Xrunjdwp:transport=dt_socket,address=8008,server=y,suspend=n \
 		 -Dwallet.test -classpath build -Djava.library.path=. \
-		 com.breadwallet.core.BRWalletManager $(ARGS) # -D.
+		 swyftwallet.core.BRWalletManager $(ARGS) # -D.
 
 $(JNI_LIB): $(JNI_OBJS) $(CORE_OBJS) $(ETH_OBJS)
 	cc -dynamiclib -lresolv -o $@ $?
@@ -181,21 +181,21 @@ java_comp:	FORCE
 
 jni_hdr_core: 	FORCE
 	@echo Core JNI Headers
-	@(cd build/com/breadwallet/core; \
+	@(cd build/com_swyftwallet_/core; \
 	  for class in BRCore*.class; do \
-	      javah -jni -d $(DIR)/$(JNI_SDIR) -classpath $(DIR)/build com.breadwallet.core.$${class%%.class}; \
+	      javah -jni -d $(DIR)/$(JNI_SDIR) -classpath $(DIR)/build swyftwallet.core.$${class%%.class}; \
 	  done)
 	@(cd $(JNI_SDIR); \
-	  rm -f .h com_breadwallet_core_BRCoreWalletManager.h com_breadwallet_core_BRCore*_*.h)
+	  rm -f .h com_swyftwallet_core_BRCoreWalletManager.h com_swyftwallet_core_BRCore*_*.h)
 
 jni_hdr_eth: 	FORCE
 	@echo Ethereum JNI Headers
-	@(cd build/com/breadwallet/core/ethereum; \
+	@(cd build/com_swyftwallet_/core/ethereum; \
 	  for class in BREthereum*.class; do \
-	      javah -jni -d $(DIR)/$(JNI_SDIR)/ethereum -classpath $(DIR)/build com.breadwallet.core.ethereum.$${class%%.class}; \
+	      javah -jni -d $(DIR)/$(JNI_SDIR)/ethereum -classpath $(DIR)/build swyftwallet.core.ethereum.$${class%%.class}; \
 	  done)
 	@(cd $(JNI_SDIR)/ethereum; \
-	  rm -f .h com_breadwallet_core_ethereum_BREthereum*_*.h)
+	  rm -f .h com_swyftwallet_core_ethereum_BREthereum*_*.h)
 
 jni_hdr: java_comp jni_hdr_core jni_hdr_eth
 
@@ -219,9 +219,9 @@ FORCE:
 # 	java -Djava.library.path=/Users/ebg Foo
 #
 
-# (cd ${APP}/app/build/intermediates/classes/debug/com/breadwallet/core; for class in BRCore*.class; do \
+# (cd ${APP}/app/build/intermediates/classes/debug/com_swyftwallet_/core; for class in BRCore*.class; do \
 #     javah -jni -d ${APP}/app/src/main/cpp/breadwallet-core/Java/ \
 #	-classpath ${APP}/app/build/intermediates/classes/debug/ \
-#	com.breadwallet.core.${class%%.class}; \
+#	swyftwallet.core.${class%%.class}; \
 #	done)
 # 15RBcXQMTfebbAfUFeBbcDfs1fVvPayWdU

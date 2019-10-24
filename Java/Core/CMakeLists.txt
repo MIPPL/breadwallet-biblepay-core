@@ -87,32 +87,32 @@ target_sources (core
                 PUBLIC
                 ../../Java/Core/src/main/cpp/jni/BRCoreJni.h
                 ../../Java/Core/src/main/cpp/jni/BRCoreJni.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreJniReference.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreJniReference.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreAddress.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreAddress.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreChainParams.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreChainParams.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeer.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeer.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMasterPubKey.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMasterPubKey.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreKey.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreKey.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMerkleBlock.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreMerkleBlock.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeerManager.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePeerManager.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransaction.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransaction.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionInput.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionInput.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionOutput.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreTransactionOutput.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePaymentProtocol.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCorePaymentProtocol.h
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreWallet.c
-                ../../Java/Core/src/main/cpp/jni/com_breadwallet_core_BRCoreWallet.h)
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreJniReference.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreJniReference.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreAddress.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreAddress.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreChainParams.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreChainParams.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCorePeer.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCorePeer.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreMasterPubKey.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreMasterPubKey.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreKey.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreKey.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreMerkleBlock.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreMerkleBlock.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCorePeerManager.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCorePeerManager.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreTransaction.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreTransaction.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreTransactionInput.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreTransactionInput.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreTransactionOutput.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreTransactionOutput.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCorePaymentProtocol.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCorePaymentProtocol.h
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreWallet.c
+        src/main/cpp/jni/com_swyftwallet_core_BRCoreWallet.h)
 
 # Core Ethereum
 target_sources (core
@@ -265,17 +265,17 @@ target_sources (core
 # Core Ethereum JNI
 target_sources (core
                 PUBLIC
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumAccount.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumAmount.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumBlock.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.c
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumEWM.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.c
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumNetwork.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumToken.c
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumToken.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumTransaction.h
-                ../../Java/Core/src/main/cpp/jni/ethereum/com_breadwallet_core_ethereum_BREthereumWallet.h)
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumAccount.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumAmount.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumBlock.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumEWM.c
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumEWM.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumNetwork.c
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumNetwork.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumToken.c
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumToken.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumTransaction.h
+                ../../Java/Core/src/main/cpp/jni/ethereum/com_swyftwallet_core_ethereum_BREthereumWallet.h)
 
 include_directories(../../)
 include_directories(../../support)

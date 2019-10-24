@@ -7,7 +7,7 @@
  * See the LICENSE file at the project root for license information.
  * See the CONTRIBUTORS file at the project root for a list of contributors.
  */
-package com.breadwallet.crypto;
+package com.swyftwallet.crypto;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -23,8 +23,8 @@ public class BaseAIT {
 
     @Test
     public void useAppContext() {
-        assertEquals("com.breadwallet.crypto.test", appContext.getPackageName());
-        assertEquals("com.breadwallet.crypto.test", context.getPackageName());
+        assertEquals("com.swyftwallet.crypto.test", appContext.getPackageName());
+        assertEquals("com.swyftwallet.crypto.test", context.getPackageName());
     }
 
 }
