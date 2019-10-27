@@ -28,7 +28,7 @@ JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCoreTransaction_getVersion
 /*
  * Class:     com_swyftwallet_core_BRCoreTransaction
  * Method:    getInputs
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionInput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionInput;
  */
 JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCoreTransaction_getInputs
   (JNIEnv *, jobject);
@@ -36,7 +36,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCoreTransaction_getIn
 /*
  * Class:     com_swyftwallet_core_BRCoreTransaction
  * Method:    getOutputs
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionOutput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionOutput;
  */
 JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCoreTransaction_getOutputs
   (JNIEnv *, jobject);
@@ -92,7 +92,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_swyftwallet_core_BRCoreTransaction_seriali
 /*
  * Class:     com_swyftwallet_core_BRCoreTransaction
  * Method:    addInput
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransactionInput;)V
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransactionInput;)V
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreTransaction_addInput
   (JNIEnv *, jobject, jobject);
@@ -100,7 +100,7 @@ JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreTransaction_addInput
 /*
  * Class:     com_swyftwallet_core_BRCoreTransaction
  * Method:    addOutput
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransactionOutput;)V
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransactionOutput;)V
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreTransaction_addOutput
   (JNIEnv *, jobject, jobject);
@@ -140,7 +140,7 @@ JNIEXPORT jboolean JNICALL Java_com_swyftwallet_core_BRCoreTransaction_isSigned
 /*
  * Class:     com_swyftwallet_core_BRCoreTransaction
  * Method:    sign
- * Signature: ([Lcom_swyftwallet_/core/BRCoreKey;I)V
+ * Signature: ([Lcom/swyftwallet/core/BRCoreKey;I)V
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreTransaction_sign
   (JNIEnv *, jobject, jobjectArray, jint);

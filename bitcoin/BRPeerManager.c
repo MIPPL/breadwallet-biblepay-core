@@ -1092,7 +1092,7 @@ static int _BRPeerManagerVerifyBlock(BRPeerManager *manager, BRMerkleBlock *bloc
     int r = 1;
 
     if (! prev || ! UInt256Eq(block->prevBlock, prev->blockHash) || block->height != prev->height + 1) r = 0;
-
+/*
     // check if we hit a difficulty transition, and find previous transition time
     if (r && (block->height % BLOCK_DIFFICULTY_INTERVAL) == 0) {
         BRMerkleBlock *b = block;
@@ -1125,7 +1125,7 @@ static int _BRPeerManagerVerifyBlock(BRPeerManager *manager, BRMerkleBlock *bloc
                  u256hex(block->blockHash));
         r = 0;
     }
-    
+  */
     if (r) {
         BRMerkleBlock *checkpoint = BRSetGet(manager->checkpoints, block);
 

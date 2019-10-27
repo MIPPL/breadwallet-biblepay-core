@@ -26,7 +26,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolPaym
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolPaymentACK
  * Method:    getTransactions
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolPaymentACK_getTransactions
   (JNIEnv *, jobject);
@@ -34,7 +34,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolPa
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolPaymentACK
  * Method:    getRefundTo
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionOutput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionOutput;
  */
 JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolPaymentACK_getRefundTo
   (JNIEnv *, jobject);

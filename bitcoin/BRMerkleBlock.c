@@ -25,6 +25,7 @@
 #include "BRMerkleBlock.h"
 #include "BRCrypto.h"
 #include "BRAddress.h"
+#include "../support/x11.h"
 #include <stdlib.h>
 #include <inttypes.h>
 #include <limits.h>
@@ -135,7 +136,8 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen)
             if (block->flags) memcpy(block->flags, &buf[off], len);
         }
         
-        BRSHA256_2(&block->blockHash, buf, 80);
+        //BRSHA256_2(&block->blockHash, buf, 80);
+        x11_hash(buf, &block->blockHash, 80);
     }
     
     return block;
@@ -269,7 +271,7 @@ static UInt256 _BRMerkleBlockRootR(const BRMerkleBlock *block, size_t *hashIdx, 
 int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
 {
     assert(block != NULL);
-    
+
     // target is in "compact" format, where the most significant byte is the size of the value in bytes, next
     // bit is the sign, and the last 23 bits is the value after having been right shifted by (size - 3)*8 bits
     const uint32_t size = block->target >> 24, target = block->target & 0x007fffff;
@@ -284,7 +286,7 @@ int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
     if (block->timestamp > currentTime + BLOCK_MAX_TIME_DRIFT) r = 0;
     
     // check if proof-of-work target is out of range
-    if (target == 0 || (block->target & 0x00800000) || block->target > MAX_PROOF_OF_WORK) r = 0;
+    /*if (target == 0 || (block->target & 0x00800000) || block->target > MAX_PROOF_OF_WORK) r = 0;
     
     if (size > 3) UInt32SetLE(&t.u8[size - 3], target);
     else UInt32SetLE(t.u8, target >> (3 - size)*8);
@@ -293,7 +295,7 @@ int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
         if (block->blockHash.u8[i] < t.u8[i]) break;
         if (block->blockHash.u8[i] > t.u8[i]) r = 0;
     }
-    
+    */
     return r;
 }
 

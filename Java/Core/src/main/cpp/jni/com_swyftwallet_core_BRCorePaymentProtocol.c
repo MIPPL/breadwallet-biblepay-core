@@ -70,7 +70,7 @@ Java_com_swyftwallet_core_BRCorePaymentProtocolRequest_getNetwork
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolRequest
  * Method:    getOutputs
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionOutput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionOutput;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCorePaymentProtocolRequest_getOutputs
@@ -367,7 +367,7 @@ Java_com_swyftwallet_core_BRCorePaymentProtocolPayment_getMerchantData
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolPayment
  * Method:    getTransactions
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCorePaymentProtocolPayment_getTransactions
@@ -394,7 +394,7 @@ Java_com_swyftwallet_core_BRCorePaymentProtocolPayment_getTransactions
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolPayment
  * Method:    getRefundTo
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionOutput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionOutput;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCorePaymentProtocolPayment_getRefundTo
@@ -524,7 +524,7 @@ Java_com_swyftwallet_core_BRCorePaymentProtocolACK_getMerchantData
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolACK
  * Method:    getTransactions
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCorePaymentProtocolACK_getTransactions
@@ -551,7 +551,7 @@ Java_com_swyftwallet_core_BRCorePaymentProtocolACK_getTransactions
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolACK
  * Method:    getRefundTo
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionOutput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionOutput;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCorePaymentProtocolACK_getRefundTo
@@ -766,7 +766,7 @@ Java_com_swyftwallet_core_BRCorePaymentProtocolInvoiceRequest_createPaymentProto
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolInvoiceRequest
  * Method:    createPaymentProtocolInvoiceRequestFull
- * Signature: (Lcom_swyftwallet_/core/BRCoreKey;JLjava/lang/String;[BLjava/lang/String;Ljava/lang/String;[B)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreKey;JLjava/lang/String;[BLjava/lang/String;Ljava/lang/String;[B)J
  */
 JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolInvoiceRequest_createPaymentProtocolInvoiceRequestFull
         (JNIEnv *env, jclass thisClass,

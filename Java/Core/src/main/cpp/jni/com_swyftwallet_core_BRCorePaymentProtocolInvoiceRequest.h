@@ -74,7 +74,7 @@ JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolInvoiceRe
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolInvoiceRequest
  * Method:    createPaymentProtocolInvoiceRequestFull
- * Signature: (Lcom_swyftwallet_/core/BRCoreKey;JLjava/lang/String;[BLjava/lang/String;Ljava/lang/String;[B)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreKey;JLjava/lang/String;[BLjava/lang/String;Ljava/lang/String;[B)J
  */
 JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolInvoiceRequest_createPaymentProtocolInvoiceRequestFull
   (JNIEnv *, jclass, jobject, jlong, jstring, jbyteArray, jstring, jstring, jbyteArray);

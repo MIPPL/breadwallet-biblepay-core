@@ -236,7 +236,7 @@ Java_com_swyftwallet_core_BRCorePeerManager_getDownloadPeerName
 /*
  * Class:     com_swyftwallet_core_BRCorePeerManager
  * Method:    publishTransaction
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)V
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)V
  */
 JNIEXPORT void JNICALL
 Java_com_swyftwallet_core_BRCorePeerManager_publishTransactionWithListener
@@ -275,7 +275,7 @@ Java_com_swyftwallet_core_BRCorePeerManager_getRelayCount
 /*
  * Class:     com_swyftwallet_core_BRCorePeerManager
  * Method:    testSaveBlocksCallback
- * Signature: (Z[Lcom_swyftwallet_/core/BRCoreMerkleBlock;)V
+ * Signature: (Z[Lcom/swyftwallet/core/BRCoreMerkleBlock;)V
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCorePeerManager_testSaveBlocksCallback
         (JNIEnv *env, jobject thisObject, jboolean replace, jobjectArray blockObjectArray) {
@@ -305,7 +305,7 @@ JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCorePeerManager_testSaveBlock
 /*
  * Class:     com_swyftwallet_core_BRCorePeerManager
  * Method:    testSavePeersCallback
- * Signature: (Z[Lcom_swyftwallet_/core/BRCorePeer;)V
+ * Signature: (Z[Lcom/swyftwallet/core/BRCorePeer;)V
  */
 JNIEXPORT void JNICALL 
 Java_com_swyftwallet_core_BRCorePeerManager_testSavePeersCallback
@@ -336,7 +336,7 @@ Java_com_swyftwallet_core_BRCorePeerManager_testSavePeersCallback
 /*
  * Class:     com_swyftwallet_core_BRCorePeerManager
  * Method:    jniCreateCorePeerManager
- * Signature: (Lcom_swyftwallet_/core/BRCoreChainParams;Lcom_swyftwallet_/core/BRCoreWallet;D[Lcom_swyftwallet_/core/BRCoreMerkleBlock;[Lcom_swyftwallet_/core/BRCorePeer;Lcom_swyftwallet_/core/BRCorePeerManager/Listener;)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreChainParams;Lcom/swyftwallet/core/BRCoreWallet;D[Lcom/swyftwallet/core/BRCoreMerkleBlock;[Lcom/swyftwallet/core/BRCorePeer;Lcom/swyftwallet/core/BRCorePeerManager/Listener;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_BRCorePeerManager_createCorePeerManager
@@ -396,7 +396,7 @@ Java_com_swyftwallet_core_BRCorePeerManager_createCorePeerManager
 /*
  * Class:     com_swyftwallet_core_BRCorePeerManager
  * Method:    installListener
- * Signature: (Lcom_swyftwallet_/core/BRCorePeerManager/Listener;)V
+ * Signature: (Lcom/swyftwallet/core/BRCorePeerManager/Listener;)V
  */
 JNIEXPORT void
 JNICALL Java_com_swyftwallet_core_BRCorePeerManager_installListener
@@ -537,7 +537,7 @@ saveBlocks(void *info, int replace, BRMerkleBlock *blocks[], size_t blockCount) 
     jmethodID listenerMethod =
             lookupListenerMethod(env, listener,
                                  "saveBlocks",
-                                 "(Z[Lcom_swyftwallet_/core/BRCoreMerkleBlock;)V");
+                                 "(Z[Lcom/swyftwallet/core/BRCoreMerkleBlock;)V");
     assert (NULL != listenerMethod);
 
     // Create the Java BRCoreMerkleBlock array
@@ -569,7 +569,7 @@ savePeers(void *info, int replace, const BRPeer peers[], size_t count) {
     jmethodID listenerMethod =
             lookupListenerMethod(env, listener,
                                  "savePeers",
-                                 "(Z[Lcom_swyftwallet_/core/BRCorePeer;)V");
+                                 "(Z[Lcom/swyftwallet/core/BRCorePeer;)V");
     assert (NULL != listenerMethod);
 
     jobjectArray peerArray = (*env)->NewObjectArray(env, count, peerClass, 0);

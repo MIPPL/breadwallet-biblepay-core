@@ -80,6 +80,34 @@ target_sources (core
                 ../../bcash/BRBCashAddr.h
                 ../../bcash/BRBCashParams.h
                 ../../bcash/BRBCashParams.c
+
+                # X11 files
+                ../../support/x11.c
+                ../../support/x11.h
+                ../../support/sha3/aes_helper.c
+                ../../support/sha3/blake.c
+                ../../support/sha3/bmw.c
+                ../../support/sha3/cubehash.c
+                ../../support/sha3/echo.c
+                ../../support/sha3/groestl.c
+                ../../support/sha3/jh.c
+                ../../support/sha3/keccak.c
+                ../../support/sha3/luffa.c
+                ../../support/sha3/shavite.c
+                ../../support/sha3/simd.c
+                ../../support/sha3/skein.c
+                ../../support/sha3/sph_blake.h
+                ../../support/sha3/sph_bmw.h
+                ../../support/sha3/sph_cubehash.h
+                ../../support/sha3/sph_echo.h
+                ../../support/sha3/sph_groestl.h
+                ../../support/sha3/sph_jh.h
+                ../../support/sha3/sph_keccak.h
+                ../../support/sha3/sph_luffa.h
+                ../../support/sha3/sph_shavite.h
+                ../../support/sha3/sph_simd.h
+                ../../support/sha3/sph_skein.h
+                ../../support/sha3/sph_types.h
                 )
 
 # Core JNI

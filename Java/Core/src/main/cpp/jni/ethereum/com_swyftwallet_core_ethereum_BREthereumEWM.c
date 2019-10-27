@@ -264,7 +264,7 @@ mapToHashDataPair (JNIEnv *env, jobject arrayObject) {
 /*
  * Class:     com_swyftwallet_core_ethereum_BREthereumEWM
  * Method:    jniCreateEWM
- * Signature: (Lcom_swyftwallet_/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J
+ * Signature: (Lcom/swyftwallet/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_ethereum_BREthereumEWM_jniCreateEWM
@@ -331,7 +331,7 @@ Java_com_swyftwallet_core_ethereum_BREthereumEWM_jniCreateEWM
 /*
  * Class:     com_swyftwallet_core_ethereum_BREthereumEWM
  * Method:    jniCreateEWM_PublicKey
- * Signature: (Lcom_swyftwallet_/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;[B)J
+ * Signature: (Lcom/swyftwallet/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;[B)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_ethereum_BREthereumEWM_jniCreateEWM_1PublicKey

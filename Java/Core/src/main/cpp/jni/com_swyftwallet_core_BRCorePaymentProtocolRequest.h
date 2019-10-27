@@ -18,7 +18,7 @@ JNIEXPORT jstring JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolRequest
 /*
  * Class:     com_swyftwallet_core_BRCorePaymentProtocolRequest
  * Method:    getOutputs
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransactionOutput;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransactionOutput;
  */
 JNIEXPORT jobjectArray JNICALL Java_com_swyftwallet_core_BRCorePaymentProtocolRequest_getOutputs
   (JNIEnv *, jobject);

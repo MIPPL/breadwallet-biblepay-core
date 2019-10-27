@@ -49,7 +49,7 @@ static jmethodID transactionConstructor;
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    createJniCoreWallet
- * Signature: ([Lcom_swyftwallet_/core/BRCoreTransaction;Lcom_swyftwallet_/core/BRCoreMasterPubKey;I)J
+ * Signature: ([Lcom/swyftwallet/core/BRCoreTransaction;Lcom/swyftwallet/core/BRCoreMasterPubKey;I)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_createJniCoreWallet
@@ -81,7 +81,7 @@ Java_com_swyftwallet_core_BRCoreWallet_createJniCoreWallet
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    installListener
- * Signature: (Lcom_swyftwallet_/core/BRCoreWallet/Listener;)V
+ * Signature: (Lcom/swyftwallet/core/BRCoreWallet/Listener;)V
  */
 JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreWallet_installListener
         (JNIEnv *env, jobject thisObject, jobject listenerObject) {
@@ -103,7 +103,7 @@ JNIEXPORT void JNICALL Java_com_swyftwallet_core_BRCoreWallet_installListener
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    getReceiveAddress
- * Signature: ()Lcom_swyftwallet_/core/BRCoreAddress;
+ * Signature: ()Lcom/swyftwallet/core/BRCoreAddress;
  */
 JNIEXPORT jobject JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getReceiveAddress
@@ -119,7 +119,7 @@ Java_com_swyftwallet_core_BRCoreWallet_getReceiveAddress
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    getLegacyAddress
- * Signature: ()Lcom_swyftwallet_/core/BRCoreAddress;
+ * Signature: ()Lcom/swyftwallet/core/BRCoreAddress;
  */
 JNIEXPORT jobject JNICALL Java_com_swyftwallet_core_BRCoreWallet_getLegacyAddress
         (JNIEnv *env, jobject thisObject) {
@@ -134,7 +134,7 @@ JNIEXPORT jobject JNICALL Java_com_swyftwallet_core_BRCoreWallet_getLegacyAddres
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    getAllAddresses
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreAddress;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreAddress;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getAllAddresses
@@ -169,7 +169,7 @@ Java_com_swyftwallet_core_BRCoreWallet_getAllAddresses
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    containsAddress
- * Signature: (Lcom_swyftwallet_/core/BRCoreAddress;)Z
+ * Signature: (Lcom/swyftwallet/core/BRCoreAddress;)Z
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_containsAddress
@@ -183,7 +183,7 @@ Java_com_swyftwallet_core_BRCoreWallet_containsAddress
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    addressIsUsed
- * Signature: (Lcom_swyftwallet_/core/BRCoreAddress;)Z
+ * Signature: (Lcom/swyftwallet/core/BRCoreAddress;)Z
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_addressIsUsed
@@ -197,7 +197,7 @@ Java_com_swyftwallet_core_BRCoreWallet_addressIsUsed
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    jniGetTransactions
- * Signature: ()[Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: ()[Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_jniGetTransactions
@@ -230,7 +230,7 @@ Java_com_swyftwallet_core_BRCoreWallet_jniGetTransactions
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    getTransactionsConfirmedBefore
- * Signature: (J)[Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: (J)[Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobjectArray JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getTransactionsConfirmedBefore
@@ -340,7 +340,7 @@ JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCoreWallet_getDefaultFeePerK
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    createTransaction
- * Signature: (JLcom_swyftwallet_/core/BRCoreAddress;)Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: (JLcom/swyftwallet/core/BRCoreAddress;)Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobject JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_createTransaction
@@ -362,7 +362,7 @@ Java_com_swyftwallet_core_BRCoreWallet_createTransaction
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    createTransactionForOutputs
- * Signature: ([Lcom_swyftwallet_/core/BRCoreTransactionOutput;)Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: ([Lcom/swyftwallet/core/BRCoreTransactionOutput;)Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobject JNICALL Java_com_swyftwallet_core_BRCoreWallet_createTransactionForOutputs
         (JNIEnv *env, jobject thisObject, jobjectArray outputsArray) {
@@ -391,7 +391,7 @@ JNIEXPORT jobject JNICALL Java_com_swyftwallet_core_BRCoreWallet_createTransacti
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    signTransaction
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;[B)Z
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;[B)Z
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_signTransaction
@@ -422,7 +422,7 @@ Java_com_swyftwallet_core_BRCoreWallet_signTransaction
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    containsTransaction
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)Z
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)Z
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_containsTransaction
@@ -435,7 +435,7 @@ Java_com_swyftwallet_core_BRCoreWallet_containsTransaction
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    jniRegisterTransaction
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)Z
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)Z
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_jniRegisterTransaction
@@ -491,7 +491,7 @@ Java_com_swyftwallet_core_BRCoreWallet_updateTransactions
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    jniTransactionForHash
- * Signature: ([B)Lcom_swyftwallet_/core/BRCoreTransaction;
+ * Signature: ([B)Lcom/swyftwallet/core/BRCoreTransaction;
  */
 JNIEXPORT jobject JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_jniTransactionForHash
@@ -507,7 +507,7 @@ Java_com_swyftwallet_core_BRCoreWallet_jniTransactionForHash
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    transactionIsValid
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)I
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)I
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_transactionIsValid
@@ -520,7 +520,7 @@ Java_com_swyftwallet_core_BRCoreWallet_transactionIsValid
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    transactionIsPending
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)I
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)I
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_transactionIsPending
@@ -533,7 +533,7 @@ Java_com_swyftwallet_core_BRCoreWallet_transactionIsPending
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    transactionIsVerified
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)I
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)I
  */
 JNIEXPORT jboolean JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_transactionIsVerified
@@ -547,7 +547,7 @@ Java_com_swyftwallet_core_BRCoreWallet_transactionIsVerified
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    transactionFee
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getTransactionFee
@@ -560,7 +560,7 @@ Java_com_swyftwallet_core_BRCoreWallet_getTransactionFee
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    transactionAmountSent
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getTransactionAmountSent
@@ -573,7 +573,7 @@ Java_com_swyftwallet_core_BRCoreWallet_getTransactionAmountSent
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    transactionAmountReceived
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getTransactionAmountReceived
@@ -586,7 +586,7 @@ Java_com_swyftwallet_core_BRCoreWallet_getTransactionAmountReceived
 /*
  * Class:     com_swyftwallet_core_BRCoreWallet
  * Method:    getBalanceAfterTransaction
- * Signature: (Lcom_swyftwallet_/core/BRCoreTransaction;)J
+ * Signature: (Lcom/swyftwallet/core/BRCoreTransaction;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_swyftwallet_core_BRCoreWallet_getBalanceAfterTransaction
@@ -730,7 +730,7 @@ txAdded(void *info, BRTransaction *tx) {
     jmethodID listenerMethod =
             lookupListenerMethod(env, listener,
                                  "onTxAdded",
-                                 "(Lcom_swyftwallet_/core/BRCoreTransaction;)V");
+                                 "(Lcom/swyftwallet/core/BRCoreTransaction;)V");
     assert (NULL != listenerMethod);
 
     // Create the BRCoreTransaction
