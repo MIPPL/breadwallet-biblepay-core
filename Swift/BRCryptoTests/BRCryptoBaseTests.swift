@@ -24,7 +24,7 @@ class BRCryptoBaseTests: XCTestCase {
         let btc = Bitcoin.currency
         let eth = Ethereum.currency
 
-        XCTAssert ("BTC" == btc.code)
+        XCTAssert ("SWYFT" == btc.code)
         XCTAssert (btc == btc)
         XCTAssert (btc != eth)
     }
@@ -75,20 +75,20 @@ class BRCryptoBaseTests: XCTestCase {
     }
 
     func testCurrencyPair () {
-        let BTC = Bitcoin.currency.defaultUnit!
+        let SWYFT = Bitcoin.currency.defaultUnit!
         let USD = Fiat.US.defaultUnit!
 
-        let pair = CurrencyPair (baseUnit: BTC, quoteUnit: USD, exchangeRate: 6000)
+        let pair = CurrencyPair (baseUnit: SWYFT, quoteUnit: USD, exchangeRate: 6000)
 
-        // BTC -> USD
-        let inUSD = pair.exchange(asBase: Amount (value: 1.0, unit: BTC))
+        // SWYFT -> USD
+        let inUSD = pair.exchange(asBase: Amount (value: 1.0, unit: SWYFT))
         XCTAssertEqual(6000, inUSD?.double ?? 0, accuracy: 1e-6)
 
-        // USD -> BTC
+        // USD -> SWYFT
         let inBTC = pair.exchange(asQuote: Amount (value: 6000.0, unit: USD))
         XCTAssertEqual(1.0, inBTC?.double ?? 0, accuracy: 1e-6)
 
-        XCTAssertEqual("\(BTC.name)/\(USD.name)=\(6000.0)", pair.description)
+        XCTAssertEqual("\(SWYFT.name)/\(USD.name)=\(6000.0)", pair.description)
     }
 
     func testAccount () {
@@ -107,7 +107,7 @@ class BRCryptoBaseTests: XCTestCase {
         XCTAssertNotEqual (Ethereum.Networks.rinkeby, Ethereum.Networks.ropsten)
 
         // name
-        XCTAssertEqual("BTC Mainnet", Bitcoin.Networks.mainnet.name)
+        XCTAssertEqual("SWYFT Mainnet", Bitcoin.Networks.mainnet.name)
         XCTAssertEqual("BCH Mainnet", Bitcash.Networks.mainnet.name)
         XCTAssertEqual("ETH Mainnet", Ethereum.Networks.mainnet.name)
 

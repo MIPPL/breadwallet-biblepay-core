@@ -25,19 +25,19 @@ public class DefaultBitcoinBackendClient: BitcoinBackendClient {
 public class DefaultBitcoinPersistenceClient: BitcoinPersistenceClient {
     public func savePeers (manager: WalletManager,
                            data: Dictionary<String, String>) {
-        print ("TST: BTC: savePeers")
+        print ("TST: SWYFT: savePeers")
     }
 
     public func saveBlocks(manager: WalletManager,
                            data: Dictionary<String, String>) {
-        print ("TST: BTC: saveBlocks")
+        print ("TST: SWYFT: saveBlocks")
     }
 
     public func changeTransaction (manager: WalletManager,
                                    change: WalletManagerPersistenceChangeType,
                                    hash: String,
                                    data: String) {
-        print ("TST: BTC: changeTransaction")
+        print ("TST: SWYFT: changeTransaction")
     }
 
     public init () {}

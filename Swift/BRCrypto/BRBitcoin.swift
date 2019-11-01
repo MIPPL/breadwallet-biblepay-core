@@ -13,7 +13,7 @@ import Foundation // DispatchQueue
 import BRCore
 
 public struct Bitcoin {
-    public static let currency = Currency (code: "BTC", symbol:  "₿", name: "Bitcoin", decimals: 8,
+    public static let currency = Currency (code: "SWYFT", symbol:  "₿", name: "Bitcoin", decimals: 8,
                                            baseUnit: (name: "SAT", symbol: "sat"))
     public struct Units {
         public static let SATOSHI = Bitcoin.currency.baseUnit!
@@ -21,8 +21,8 @@ public struct Bitcoin {
     }
 
     public struct Networks {
-        public static let mainnet = Network.bitcoin (name: "BTC Mainnet", forkId: 0x00, chainParams: BRChainParamsGetBitcoin (1))
-        public static let testnet = Network.bitcoin (name: "BTC Testnet", forkId: 0x40, chainParams: BRChainParamsGetBitcoin (0))
+        public static let mainnet = Network.bitcoin (name: "SWYFT Mainnet", forkId: 0x00, chainParams: BRChainParamsGetBitcoin (1))
+        public static let testnet = Network.bitcoin (name: "SWYFT Testnet", forkId: 0x40, chainParams: BRChainParamsGetBitcoin (0))
     }
 
     public struct AddressSchemes {

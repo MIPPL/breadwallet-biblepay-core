@@ -77,7 +77,7 @@ extension Currency: Equatable {
 /// A unit of measure for a currency.  There can be multiple units for a given currency (analogous
 /// to 'System International' units of (meters, kilometers, miles, ...) for a dimension of
 /// 'length').  For example, Ethereum has units of: WEI, GWEI, ETHER, METHER, ... and Bitcoin of:
-/// BTC, SATOSHI, ...
+/// SWYFT, SATOSHI, ...
 ///
 /// Each Currency has a 'baseUnit' - which is defined as the 'integer-ish' unit - such as SATOSHI
 /// ane WEI for Bitcoin and Ethereum, respectively.  There can be multiple 'derivedUnits' - which
@@ -121,7 +121,7 @@ public class Unit {
     /// Initilize as a 'derivedUnit'
     ///
     /// - Parameters:
-    ///   - name: The name, such a BTC
+    ///   - name: The name, such a SWYFT
     ///   - symbol: The symbol, such as "B"
     ///   - scale: The scale, such as 10_000_000
     ///   - base: The base Unit
@@ -319,16 +319,16 @@ extension Amount: CustomStringConvertible {
 ///
 /// Ref: https://en.wikipedia.org/wiki/Currency_pair
 ///
-/// Thus BTC/USD=1000 means that one BTC is changed for $1,000.  Here, BTC is the base currency
+/// Thus SWYFT/USD=1000 means that one SWYFT is changed for $1,000.  Here, SWYFT is the base currency
 /// and USD is the quote currency.  You would create such an exchange with:
 ///
-///    let BTC_USD_Pair = CurrencyPair (baseUnit:  Bitcoin.Units.BTC,
+///    let BTC_USD_Pair = CurrencyPair (baseUnit:  Bitcoin.Units.SWYFT,
 ///                                     quoteUnit: Fiat.USD.Dollar,
 ///                                     exchangeRate: 1000.0)
 ///
-/// and then use it to find the value of 2 BTC with:
+/// and then use it to find the value of 2 SWYFT with:
 ///
-///    BTC_USD_Pair.exchange (asBase: Amount (value: 2.0, unit: Bitcoin.Units.BTC))
+///    BTC_USD_Pair.exchange (asBase: Amount (value: 2.0, unit: Bitcoin.Units.SWYFT))
 ///
 /// which would return: $2,000  (as Amount of 2000.0 in Fiat.USD.Dollar)
 ///
@@ -873,7 +873,7 @@ public protocol WalletFactory {
 /// A WallettManager manages one or more wallets one of which is designated the `primaryWallet`.
 /// (For example, an EthereumWalletManager will manage an ETH wallet and one wallet for each
 /// ERC20Token; the ETH wallet will be the primaryWallet.  A BitcoinWalletManager manages one
-/// and only one wallet holding BTC.).
+/// and only one wallet holding SWYFT.).
 ///
 /// At least conceptually, a WalletManager is an 'Active Object' (whereas Transfer and Wallet are
 /// 'Passive Objects'
