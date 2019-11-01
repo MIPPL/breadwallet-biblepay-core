@@ -52,6 +52,7 @@ JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCoreTransactionInput_createT
     BRTxInputSetSignature(input, signature, signatureLen);
 
     // witness
+    /*
     input->witness = NULL;
     size_t witnessLen = (size_t) (*env)->GetArrayLength(env, witnessByteArray);
     const uint8_t *witness = (const uint8_t *)
@@ -59,7 +60,7 @@ JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_BRCoreTransactionInput_createT
              ? NULL
              : (*env)->GetByteArrayElements(env, witnessByteArray, 0));
     BRTxInputSetWitness(input, witness, witnessLen);
-
+*/
     input->sequence = (uint32_t) (sequence == -1 ? TXIN_SEQUENCE : sequence);
 
     return (jlong) input;

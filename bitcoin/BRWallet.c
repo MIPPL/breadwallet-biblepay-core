@@ -85,14 +85,16 @@ struct BRWalletStruct {
 
 inline static void _BRWalletAddressFromHash160(BRWallet *wallet, char *addr, size_t addrLen, UInt160 h)
 {
-    if (wallet->forkId != 0) {
+    //if (wallet->forkId != 0) {
         const uint8_t script[] = { OP_DUP, OP_HASH160, 20, h.u8[0], h.u8[1], h.u8[2], h.u8[3], h.u8[4], h.u8[5],
                                    h.u8[6], h.u8[7], h.u8[8], h.u8[9], h.u8[10], h.u8[11], h.u8[12], h.u8[13], h.u8[14],
                                    h.u8[15], h.u8[16], h.u8[17], h.u8[18], h.u8[19], OP_EQUALVERIFY, OP_CHECKSIG };
         
         BRAddressFromScriptPubKey(addr, addrLen, script, sizeof(script));
-    }
-    else BRAddressFromHash160(addr, addrLen, &h);
+    //}
+    //else    {
+    //    //BRAddressFromHash160(addr, addrLen, &h);
+    //}
 }
 
 inline static int _BRWalletTxIsAscending(BRWallet *wallet, const BRTransaction *tx1, const BRTransaction *tx2)
@@ -357,17 +359,19 @@ size_t BRWalletUnusedAddrs(BRWallet *wallet, BRAddress addrs[], uint32_t gapLimi
     assert(chain != NULL);
     origChain = chain;
     i = count = startCount = array_count(chain);
-    
+
     // keep only the trailing contiguous block of addresses with no transactions
     while (i > 0 && ! BRSetContains(wallet->usedPKH, &chain[i - 1])) i--;
     
     while (i + gapLimit > count) { // generate new addresses up to gapLimit
         BRKey key;
+        BRAddress address = BR_ADDRESS_NONE;
         uint8_t pubKey[BRBIP32PubKey(NULL, 0, wallet->masterPubKey, internal, count)];
         size_t len = BRBIP32PubKey(pubKey, sizeof(pubKey), wallet->masterPubKey, internal, (uint32_t)count);
         
         if (! BRKeySetPubKey(&key, pubKey, len)) break;
         array_add(chain, BRKeyHash160(&key));
+
         count++;
         if (BRSetContains(wallet->usedPKH, &chain[array_count(chain) - 1])) i = count;
     }

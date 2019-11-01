@@ -269,11 +269,11 @@ static size_t _BRTransactionData(const BRTransaction *tx, uint8_t *data, size_t 
     
     if (hashType & SIGHASH_FORKID) return _BRTransactionWitnessData(tx, data, dataLen, index, hashType);
     if (anyoneCanPay && index >= tx->inCount) return 0;
-    
+    /*
     for (i = 0; index == SIZE_MAX && ! witnessFlag && i < tx->inCount; i++) {
         if (tx->inputs[i].witLen > 0) witnessFlag = 1;
     }
-    
+    */
     if (data && off + sizeof(uint32_t) <= dataLen) UInt32SetLE(&data[off], tx->version); // tx version
     off += sizeof(uint32_t);
     
@@ -512,7 +512,7 @@ void BRTransactionAddInput(BRTransaction *tx, UInt256 txHash, uint32_t index, ui
     assert(! UInt256IsZero(txHash));
     assert(script != NULL || scriptLen == 0);
     assert(signature != NULL || sigLen == 0);
-    assert(witness != NULL || witLen == 0);
+    //assert(witness != NULL || witLen == 0);
     
     if (tx) {
         if (script) BRTxInputSetScript(&input, script, scriptLen);
