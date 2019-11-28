@@ -71,6 +71,8 @@ typedef enum {
     EVENT_STATUS_SUCCESS,
     EVENT_STATUS_NOT_STARTED,
     EVENT_STATUS_UNKNOWN_TYPE,
+    EVENT_STATUS_WAIT_ERROR,
+    EVENT_STATUS_WAIT_ABORT,
     EVENT_STATUS_NULL_EVENT,
     EVENT_STATUS_NONE_PENDING
 } BREventStatus;
@@ -133,6 +135,9 @@ eventHandlerStart (BREventHandler handler);
 
 extern void
 eventHandlerStop (BREventHandler handler);
+
+extern int
+eventHandlerIsCurrentThread (BREventHandler handler);
 
 extern int
 eventHandlerIsRunning (BREventHandler handler);
