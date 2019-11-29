@@ -80,6 +80,7 @@ tokenCreate (const char *address,
 extern void
 tokenRelease (BREthereumToken token);
 
+extern void
 tokenUpdate (BREthereumToken token,
              const char *symbol,
              const char *name,

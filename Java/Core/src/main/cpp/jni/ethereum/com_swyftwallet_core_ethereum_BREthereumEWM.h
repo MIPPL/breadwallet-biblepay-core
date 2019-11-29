@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     com_swyftwallet_core_ethereum_BREthereumEWM
  * Method:    jniCreateEWM
- * Signature: (Lcom/swyftwallet/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J
+ * Signature: (Lcom/breadwallet/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J
  */
 JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_ethereum_BREthereumEWM_jniCreateEWM
   (JNIEnv *, jclass, jobject, jint, jlong, jstring, jstring, jobjectArray);
@@ -18,7 +18,7 @@ JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_ethereum_BREthereumEWM_jniCrea
 /*
  * Class:     com_swyftwallet_core_ethereum_BREthereumEWM
  * Method:    jniCreateEWM_PublicKey
- * Signature: (Lcom/swyftwallet/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;[B)J
+ * Signature: (Lcom/breadwallet/core/ethereum/BREthereumEWM/Client;IJLjava/lang/String;[B)J
  */
 JNIEXPORT jlong JNICALL Java_com_swyftwallet_core_ethereum_BREthereumEWM_jniCreateEWM_1PublicKey
   (JNIEnv *, jclass, jobject, jint, jlong, jstring, jbyteArray);

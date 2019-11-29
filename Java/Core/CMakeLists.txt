@@ -15,6 +15,29 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -DANDROID_STL=gnustl_static -DANDRO
 # -Wint-conversion -Wbool-conversion -Wenum-conversion -Wassign-enum -Wno-shorten-64-to-32 -Wpointer-sign -Wnewline-eof
 # -Wdeprecated-declarations -Wno-sign-conversion
 
+#
+# sqlite3 build
+#
+
+add_library(sqlite3
+        STATIC)
+
+target_sources (sqlite3
+        PRIVATE
+        ../../vendor/sqlite3/sqlite3.c
+        ../../vendor/sqlite3/sqlite3.h)
+
+target_include_directories(sqlite3
+        INTERFACE
+        ${PROJECT_SOURCE_DIR}/src/main/cpp/core/vendor/sqlite3)
+
+target_compile_definitions (sqlite3
+        PRIVATE
+        _HAVE_SQLITE_CONFIG_H=1)
+
+#
+# core build
+#
 
 add_library( # Sets the name of the library.
              core
@@ -183,6 +206,8 @@ target_sources (core
                 ../../ethereum/base/BREthereumEther.h
                 ../../ethereum/base/BREthereumGas.c
                 ../../ethereum/base/BREthereumGas.h
+                ../../ethereum/base/BREthereumFeeBasis.c
+                ../../ethereum/base/BREthereumFeeBasis.h
                 ../../ethereum/base/BREthereumHash.c
                 ../../ethereum/base/BREthereumHash.h
                 ../../ethereum/base/BREthereumData.c
@@ -287,7 +312,8 @@ target_sources (core
                 ../../ethereum/ewm/BREthereumEWMClient.c
                 ../../ethereum/ewm/BREthereumEWMEvent.c
                 ../../ethereum/ewm/BREthereumEWMPrivate.h
-#                ../../ethereum/ewm/testEwm.c
+                ../../ethereum/ewm/BREthereumEWMPersist.c
+        #                ../../ethereum/ewm/testEwm.c
                 )
 
 # Core Ethereum JNI
@@ -310,7 +336,7 @@ include_directories(../../support)
 include_directories(../../bitcoin)
 include_directories(../../bcash)
 include_directories(../../ethereum/)
-include_directories(../../secp256k1/)
+include_directories(../../vendor/secp256k1/)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -334,4 +360,5 @@ target_link_libraries( # Specifies the target library.
 
                        # Links the target library to the log library
                        # included in the NDK.
-                       ${log-lib} )
+                       ${log-lib}
+                        sqlite3 )

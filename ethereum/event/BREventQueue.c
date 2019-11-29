@@ -153,6 +153,12 @@ eventQueueEnqueue (BREventQueue queue,
 extern void
 eventQueueEnqueueTail (BREventQueue queue,
                        const BREvent *event) {
+    eventQueueEnqueue (queue, event, 1, 0);
+}
+
+extern void
+eventQueueEnqueueHead (BREventQueue queue,
+                       const BREvent *event) {
     eventQueueEnqueue (queue, event, 0, 0);
 }
 
@@ -189,12 +195,6 @@ _eventQueueDequeue (BREventQueue queue,
     queue->available = this;
 
     return 1;
-}
-
-extern void
-eventQueueEnqueueHead (BREventQueue queue,
-                       const BREvent *event) {
-    eventQueueEnqueue (queue, event, 0);
 }
 
 extern BREventStatus
