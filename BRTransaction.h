@@ -51,7 +51,7 @@ extern "C" {
 
 #define OP_RETURN      0x6a
     
-    // Wagerr opcodes
+    // Bitradio opcodes
 #define OP_SMOKETEST                0x42
 #define OP_BET_VERSION              0x01
 #define OP_BTX_MAPPING              0x01

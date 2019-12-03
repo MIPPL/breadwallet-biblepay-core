@@ -39,7 +39,7 @@ extern "C" {
 #define MIN_FEE_PER_KB     ((TX_FEE_PER_KB*1000 + 190)/191) // minimum relay fee on a 191byte tx
 #define MAX_FEE_PER_KB     ((1000100ULL*1000 + 190)/191) // slightly higher than a 10000bit fee on a 191byte tx
 
-    // Wagerr
+    // Bitradio
 #define MIN_BET_AMOUNT 25 * SATOSHIS
 #define MAX_BET_AMOUNT 10000 * SATOSHIS
     
