@@ -25,7 +25,7 @@
 #include "BRCoreJni.h"
 #include "BRChainParams.h"
 #include "bcash/BRBCashParams.h"
-#include "BRWagerrParams.h"
+#include "BRCoinParams.h"
 #include "com_wagerrwallet_core_BRCoreChainParams.h"
 
 /*
@@ -96,7 +96,7 @@ JNIEXPORT jlong JNICALL Java_com_wagerrwallet_core_BRCoreChainParams_createJniTe
 JNIEXPORT jlong JNICALL Java_com_wagerrwallet_core_BRCoreChainParams_createJniMainnetCoinChainParams
         (JNIEnv *env, jclass thisClass) {
     BRChainParams *result = (BRChainParams *) calloc (1, sizeof (BRChainParams));
-    memcpy (result, &BRWagerrParams, sizeof (BRChainParams));
+    memcpy (result, &BRCoinParams, sizeof (BRChainParams));
     return (jlong) result;
 }
 
@@ -108,6 +108,6 @@ JNIEXPORT jlong JNICALL Java_com_wagerrwallet_core_BRCoreChainParams_createJniMa
 JNIEXPORT jlong JNICALL Java_com_wagerrwallet_core_BRCoreChainParams_createJniTestnetCoinChainParams
         (JNIEnv *env, jclass thisClass) {
     BRChainParams *result = (BRChainParams *) calloc(1, sizeof(BRChainParams));
-    memcpy(result, &BRWagerrTestNetParams, sizeof(BRChainParams));
+    memcpy(result, &BRCoinTestNetParams, sizeof(BRChainParams));
     return (jlong) result;
 }

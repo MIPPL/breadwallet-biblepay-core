@@ -25,7 +25,7 @@
 #include "BRMerkleBlock.h"
 #include "BRCrypto.h"
 #include "BRAddress.h"
-#include "quark.h"
+#include "x11.h"
 #include <stdlib.h>
 #include <inttypes.h>
 #include <limits.h>
@@ -131,11 +131,6 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen)
         block->nonce = UInt32GetLE(&buf[off]);
         off += sizeof(uint32_t);
 
-        if ( block->version > 3 ) {
-            block->nAccumulatorCheckpoint = UInt256Get(&buf[off]);
-            off += sizeof(UInt256);
-        }
-
         if (off + sizeof(uint32_t) <= bufLen) {
             block->totalTx = UInt32GetLE(&buf[off]);
             off += sizeof(uint32_t);
@@ -152,12 +147,7 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen)
             if (block->flags) memcpy(block->flags, &buf[off], len);
         }
 
-        if ( block->version < 4 ) {
-            quark_hash(buf, &block->blockHash);       // hash function for block hash
-        }
-        else {
-            BRSHA256_2(&block->blockHash, buf, 112);     // 80 + Uint256 nAccumulatorCheckpoint
-        }
+        x11_hash(buf, &block->blockHash, 80);       // hash function for block hash
     }
     
     return block;
@@ -166,7 +156,7 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen)
 // returns number of bytes written to buf, or total bufLen needed if buf is NULL (block->height is not serialized)
 size_t BRMerkleBlockSerialize(const BRMerkleBlock *block, uint8_t *buf, size_t bufLen)
 {
-    size_t off = 0, len = ( block->version > 3 )? 112 : 80;
+    size_t off = 0, len = 80;
     
     assert(block != NULL);
     
@@ -188,10 +178,6 @@ size_t BRMerkleBlockSerialize(const BRMerkleBlock *block, uint8_t *buf, size_t b
         off += sizeof(uint32_t);
         UInt32SetLE(&buf[off], block->nonce);
         off += sizeof(uint32_t);
-        if ( block->version > 3 ) {
-            UInt256Set(&buf[off], block->nAccumulatorCheckpoint);
-            off += sizeof(UInt256);
-        }
 
         if (block->totalTx > 0) {
             UInt32SetLE(&buf[off], block->totalTx);
@@ -295,7 +281,7 @@ static UInt256 _BRMerkleBlockRootR(const BRMerkleBlock *block, size_t *hashIdx, 
 int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
 {
     assert(block != NULL);
-    
+
     // target is in "compact" format, where the most significant byte is the size of resulting value in bytes, the next
     // bit is the sign, and the remaining 23bits is the value after having been right shifted by (size - 3)*8 bits
     static const uint32_t maxsize = MAX_PROOF_OF_WORK >> 24, maxtarget = MAX_PROOF_OF_WORK & 0x00ffffff;
@@ -304,7 +290,7 @@ int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
     UInt256 merkleRoot = _BRMerkleBlockRootR(block, &hashIdx, &flagIdx, 0), t = UINT256_ZERO;
     int r = 1;
     int error = 0;
-    
+/*
     // check if merkle root is correct
     if (block->totalTx > 0 && ! UInt256Eq(merkleRoot, block->merkleRoot))
     {
@@ -328,10 +314,7 @@ int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
     
     if (size > 3) UInt32SetLE(&t.u8[size - 3], target);
     else UInt32SetLE(t.u8, target >> (3 - size)*8);
-/*
-    TestLog("height=%d; target=%d; MerkleRoot=%s; previous=%s; blockHash=%s; nonce=%d; version=%d; "
-    , block->height, block->target, u256hexBE(block->merkleRoot), u256hexBE(block->prevBlock), u256hexBE(block->blockHash),block->nonce, block->version);
-*/
+
     for (int i = sizeof(t) - 1; r && i >= 0; i--) { // check proof-of-work
         if (block->blockHash.u8[i] < t.u8[i]) break;
         if (block->blockHash.u8[i] > t.u8[i]) {
@@ -339,10 +322,6 @@ int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime)
             r = 0;
         }
     }
-
-/*
-    TestLog("size: %d; target: %d; maxsize: %d; maxtarget: %d; block timestamp:%d; error: %d; "
-    , size, target, maxsize, maxtarget, block->timestamp, error );
 */
     r=1;
 

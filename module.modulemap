@@ -20,10 +20,10 @@ module BRCore [system] [extern_c] {
     header "BRWallet.h"
     header "BRPeerManager.h"
     header "BRChainParams.h"
-    header "quark.h"
+    header "x11.h"
     header "bcash/BRBCashParams.h"
     header "bcash/BRBCashAddr.h"
-    header "wagerr/BRWagerrParams.h"
-    header "wagerr/BRWagerrAddr.h"
+    header "coin/BRCoinParams.h"
+    header "coin/BRCoinAddr.h"
     export *
 }
