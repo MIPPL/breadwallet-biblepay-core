@@ -2292,9 +2292,9 @@ bcsHandleProvision (BREthereumBCS bcs,
                                        provision);
                     needProvisionRelease = 0;
 
-                    eth_log ("BCS", "Resubmitted Provision: %zu: %s",
-                             provision->identifier,
-                             provisionGetTypeName(provision->type));
+                    //eth_log ("BCS", "Resubmitted Provision: %zu: %s",
+                    //         provision->identifier,
+                    //         provisionGetTypeName(provision->type));
                     break;
 
                 case PROVISION_ERROR_NODE_DATA:
